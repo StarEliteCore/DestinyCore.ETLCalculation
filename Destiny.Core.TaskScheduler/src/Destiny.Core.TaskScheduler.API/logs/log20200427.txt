@@ -1,0 +1,137 @@
+2020-04-27 09:47:14.824 +08:00 [INF] Now listening on: http://localhost:8001
+2020-04-27 09:47:14.898 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-04-27 09:47:14.900 +08:00 [INF] Hosting environment: Development
+2020-04-27 09:47:14.901 +08:00 [INF] Content root path: E:\私人github\Destiny.Core.TaskScheduler.Base\Destiny.Core.TaskScheduler\src\Destiny.Core.TaskScheduler.API
+2020-04-27 09:47:16.069 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/  
+2020-04-27 09:47:16.223 +08:00 [INF] Request finished in 156.1549ms 301 
+2020-04-27 09:47:16.243 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/index.html  
+2020-04-27 09:47:16.272 +08:00 [INF] Request finished in 28.9437ms 200 text/html;charset=utf-8
+2020-04-27 09:47:16.321 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/swagger-ui.css  
+2020-04-27 09:47:16.321 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/swagger-ui-bundle.js  
+2020-04-27 09:47:16.321 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/swagger-ui-standalone-preset.js  
+2020-04-27 09:47:16.354 +08:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2020-04-27 09:47:16.357 +08:00 [INF] Request finished in 35.5019ms 200 text/css
+2020-04-27 09:47:16.360 +08:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2020-04-27 09:47:16.365 +08:00 [INF] Request finished in 43.0623ms 200 application/javascript
+2020-04-27 09:47:16.372 +08:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2020-04-27 09:47:16.374 +08:00 [INF] Request finished in 52.3522ms 200 application/javascript
+2020-04-27 09:47:16.505 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/swagger-ui-bundle.js.map  
+2020-04-27 09:47:16.506 +08:00 [INF] Request finished in 1.5483ms 404 
+2020-04-27 09:47:16.516 +08:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:8001/swagger-ui-bundle.js.map  
+2020-04-27 09:47:16.517 +08:00 [INF] Request finished in 1.3171ms 404 
+2020-04-27 09:47:16.633 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/swagger-ui-standalone-preset.js.map  
+2020-04-27 09:47:16.634 +08:00 [INF] Request finished in 1.1059ms 404 
+2020-04-27 09:47:16.636 +08:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:8001/swagger-ui-standalone-preset.js.map  
+2020-04-27 09:47:16.636 +08:00 [INF] Request finished in 0.7021ms 404 
+2020-04-27 09:47:16.706 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/swagger/v1/swagger.json  
+2020-04-27 09:47:16.839 +08:00 [INF] Request finished in 133.2731ms 200 application/json;charset=utf-8
+2020-04-27 09:48:07.696 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/api/DataDictionary/GetTree  
+2020-04-27 09:48:07.703 +08:00 [INF] Executing endpoint 'Destiny.Core.TaskScheduler.API.Controllers.DataDictionary.DataDictionaryController.GetTreeAsync (Destiny.Core.TaskScheduler.API)'
+2020-04-27 09:48:07.739 +08:00 [INF] Route matched with {action = "GetTree", controller = "DataDictionary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Destiny.Core.TaskScheduler.Shared.Extensions.ResultExtensions.TreeData`1[Destiny.Core.TaskScheduler.Dtos.DataDictionaryDto.TreeDictionaryOutDto]] GetTreeAsync() on controller Destiny.Core.TaskScheduler.API.Controllers.DataDictionary.DataDictionaryController (Destiny.Core.TaskScheduler.API).
+2020-04-27 09:48:08.449 +08:00 [INF] Entity Framework Core 3.1.3 initialized 'DefaultDbContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: MigrationsAssembly=Destiny.Core.TaskScheduler.Domain 
+2020-04-27 09:48:08.505 +08:00 [INF] Executing action method Destiny.Core.TaskScheduler.API.Controllers.DataDictionary.DataDictionaryController.GetTreeAsync (Destiny.Core.TaskScheduler.API) - Validation state: "Valid"
+2020-04-27 09:48:21.762 +08:00 [INF] Executed DbCommand (48ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `d`.`Id`, `d`.`ParentId`, `d`.`Title` AS `title`
+FROM `DataDictionary` AS `d`
+WHERE `d`.`IsDeleted` = FALSE
+2020-04-27 09:48:22.721 +08:00 [INF] Executed action method Destiny.Core.TaskScheduler.API.Controllers.DataDictionary.DataDictionaryController.GetTreeAsync (Destiny.Core.TaskScheduler.API), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 14207.2936ms.
+2020-04-27 09:48:22.730 +08:00 [INF] Executing ObjectResult, writing value of type 'Destiny.Core.TaskScheduler.Shared.Extensions.ResultExtensions.TreeData`1[[Destiny.Core.TaskScheduler.Dtos.DataDictionaryDto.TreeDictionaryOutDto, Destiny.Core.TaskScheduler.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-04-27 09:48:22.859 +08:00 [INF] Executed action Destiny.Core.TaskScheduler.API.Controllers.DataDictionary.DataDictionaryController.GetTreeAsync (Destiny.Core.TaskScheduler.API) in 15111.793ms
+2020-04-27 09:48:22.862 +08:00 [INF] Executed endpoint 'Destiny.Core.TaskScheduler.API.Controllers.DataDictionary.DataDictionaryController.GetTreeAsync (Destiny.Core.TaskScheduler.API)'
+2020-04-27 09:48:22.867 +08:00 [INF] Request finished in 15170.8146ms 200 application/json; charset=utf-8
+2020-04-27 09:52:12.168 +08:00 [INF] Now listening on: http://localhost:8001
+2020-04-27 09:52:12.217 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-04-27 09:52:12.218 +08:00 [INF] Hosting environment: Development
+2020-04-27 09:52:12.219 +08:00 [INF] Content root path: E:\私人github\Destiny.Core.TaskScheduler.Base\Destiny.Core.TaskScheduler\src\Destiny.Core.TaskScheduler.API
+2020-04-27 09:52:13.325 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/  
+2020-04-27 09:52:13.428 +08:00 [INF] Request finished in 106.1135ms 301 
+2020-04-27 09:52:13.454 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/index.html  
+2020-04-27 09:52:13.479 +08:00 [INF] Request finished in 24.7185ms 200 text/html;charset=utf-8
+2020-04-27 09:52:13.496 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/swagger-ui-standalone-preset.js  
+2020-04-27 09:52:13.496 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/swagger-ui-bundle.js  
+2020-04-27 09:52:13.497 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/swagger-ui.css  
+2020-04-27 09:52:13.544 +08:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2020-04-27 09:52:13.544 +08:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2020-04-27 09:52:13.550 +08:00 [INF] Request finished in 53.2288ms 200 application/javascript
+2020-04-27 09:52:13.550 +08:00 [INF] Request finished in 53.0716ms 200 text/css
+2020-04-27 09:52:13.550 +08:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2020-04-27 09:52:13.555 +08:00 [INF] Request finished in 58.1118ms 200 application/javascript
+2020-04-27 09:52:13.782 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/swagger-ui-bundle.js.map  
+2020-04-27 09:52:13.787 +08:00 [INF] Request finished in 5.7333ms 404 
+2020-04-27 09:52:13.793 +08:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:8001/swagger-ui-bundle.js.map  
+2020-04-27 09:52:13.796 +08:00 [INF] Request finished in 2.8354ms 404 
+2020-04-27 09:52:13.980 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/swagger-ui-standalone-preset.js.map  
+2020-04-27 09:52:13.982 +08:00 [INF] Request finished in 2.3062ms 404 
+2020-04-27 09:52:13.986 +08:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:8001/swagger-ui-standalone-preset.js.map  
+2020-04-27 09:52:13.988 +08:00 [INF] Request finished in 2.0633ms 404 
+2020-04-27 09:52:14.059 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/swagger/v1/swagger.json  
+2020-04-27 09:52:14.176 +08:00 [INF] Request finished in 117.1194ms 200 application/json;charset=utf-8
+2020-04-27 09:52:17.453 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/api/DataDictionary/GetTree  
+2020-04-27 09:52:17.459 +08:00 [INF] Executing endpoint 'Destiny.Core.TaskScheduler.API.Controllers.DataDictionary.DataDictionaryController.GetTreeAsync (Destiny.Core.TaskScheduler.API)'
+2020-04-27 09:52:17.486 +08:00 [INF] Route matched with {action = "GetTree", controller = "DataDictionary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Destiny.Core.TaskScheduler.Shared.Extensions.ResultExtensions.TreeData`1[Destiny.Core.TaskScheduler.Dtos.DataDictionaryDto.TreeDictionaryOutDto]] GetTreeAsync() on controller Destiny.Core.TaskScheduler.API.Controllers.DataDictionary.DataDictionaryController (Destiny.Core.TaskScheduler.API).
+2020-04-27 09:52:18.010 +08:00 [INF] Entity Framework Core 3.1.3 initialized 'DefaultDbContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: MigrationsAssembly=Destiny.Core.TaskScheduler.Domain 
+2020-04-27 09:52:18.065 +08:00 [INF] Executing action method Destiny.Core.TaskScheduler.API.Controllers.DataDictionary.DataDictionaryController.GetTreeAsync (Destiny.Core.TaskScheduler.API) - Validation state: "Valid"
+2020-04-27 09:52:33.866 +08:00 [INF] Executed DbCommand (44ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `d`.`Id`, `d`.`ParentId`, `d`.`Title` AS `title`
+FROM `DataDictionary` AS `d`
+WHERE `d`.`IsDeleted` = FALSE
+2020-04-27 09:52:33.908 +08:00 [INF] Executed action method Destiny.Core.TaskScheduler.API.Controllers.DataDictionary.DataDictionaryController.GetTreeAsync (Destiny.Core.TaskScheduler.API), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 15835.175ms.
+2020-04-27 09:52:33.915 +08:00 [INF] Executing ObjectResult, writing value of type 'Destiny.Core.TaskScheduler.Shared.Extensions.ResultExtensions.TreeData`1[[Destiny.Core.TaskScheduler.Dtos.DataDictionaryDto.TreeDictionaryOutDto, Destiny.Core.TaskScheduler.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-04-27 09:52:34.044 +08:00 [INF] Executed action Destiny.Core.TaskScheduler.API.Controllers.DataDictionary.DataDictionaryController.GetTreeAsync (Destiny.Core.TaskScheduler.API) in 16546.5707ms
+2020-04-27 09:52:34.047 +08:00 [INF] Executed endpoint 'Destiny.Core.TaskScheduler.API.Controllers.DataDictionary.DataDictionaryController.GetTreeAsync (Destiny.Core.TaskScheduler.API)'
+2020-04-27 09:52:34.051 +08:00 [INF] Request finished in 16599.1297ms 200 application/json; charset=utf-8
+2020-04-27 13:39:13.689 +08:00 [INF] Now listening on: http://localhost:8001
+2020-04-27 13:39:13.741 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-04-27 13:39:13.742 +08:00 [INF] Hosting environment: Development
+2020-04-27 13:39:13.744 +08:00 [INF] Content root path: E:\私人github\Destiny.Core.TaskScheduler.Base\Destiny.Core.TaskScheduler\src\Destiny.Core.TaskScheduler.API
+2020-04-27 13:39:14.925 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/  
+2020-04-27 13:39:15.019 +08:00 [INF] Request finished in 97.674ms 301 
+2020-04-27 13:39:15.033 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/index.html  
+2020-04-27 13:39:15.057 +08:00 [INF] Request finished in 24.6479ms 200 text/html;charset=utf-8
+2020-04-27 13:39:15.084 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/swagger-ui.css  
+2020-04-27 13:39:15.084 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/swagger-ui-standalone-preset.js  
+2020-04-27 13:39:15.084 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/swagger-ui-bundle.js  
+2020-04-27 13:39:15.123 +08:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2020-04-27 13:39:15.123 +08:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2020-04-27 13:39:15.126 +08:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2020-04-27 13:39:15.130 +08:00 [INF] Request finished in 45.9202ms 200 text/css
+2020-04-27 13:39:15.129 +08:00 [INF] Request finished in 45.9098ms 200 application/javascript
+2020-04-27 13:39:15.131 +08:00 [INF] Request finished in 47.1013ms 200 application/javascript
+2020-04-27 13:39:15.462 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/swagger-ui-bundle.js.map  
+2020-04-27 13:39:15.466 +08:00 [INF] Request finished in 4.7626ms 404 
+2020-04-27 13:39:15.469 +08:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:8001/swagger-ui-bundle.js.map  
+2020-04-27 13:39:15.471 +08:00 [INF] Request finished in 1.5491ms 404 
+2020-04-27 13:39:15.636 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/swagger-ui-standalone-preset.js.map  
+2020-04-27 13:39:15.638 +08:00 [INF] Request finished in 2.1995ms 404 
+2020-04-27 13:39:15.641 +08:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:8001/swagger-ui-standalone-preset.js.map  
+2020-04-27 13:39:15.642 +08:00 [INF] Request finished in 1.5781ms 404 
+2020-04-27 13:39:15.703 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/swagger/v1/swagger.json  
+2020-04-27 13:39:15.819 +08:00 [INF] Request finished in 115.6284ms 200 application/json;charset=utf-8
+2020-04-27 13:39:19.893 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/api/DataDictionary/GetTree  
+2020-04-27 13:39:19.899 +08:00 [INF] Executing endpoint 'Destiny.Core.TaskScheduler.API.Controllers.DataDictionary.DataDictionaryController.GetTreeAsync (Destiny.Core.TaskScheduler.API)'
+2020-04-27 13:39:19.928 +08:00 [INF] Route matched with {action = "GetTree", controller = "DataDictionary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Destiny.Core.TaskScheduler.Shared.Extensions.ResultExtensions.TreeData`1[Destiny.Core.TaskScheduler.Dtos.DataDictionaryDto.TreeDictionaryOutDto]] GetTreeAsync() on controller Destiny.Core.TaskScheduler.API.Controllers.DataDictionary.DataDictionaryController (Destiny.Core.TaskScheduler.API).
+2020-04-27 13:39:20.532 +08:00 [INF] Entity Framework Core 3.1.3 initialized 'DefaultDbContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: MigrationsAssembly=Destiny.Core.TaskScheduler.Domain 
+2020-04-27 13:39:20.589 +08:00 [INF] Executing action method Destiny.Core.TaskScheduler.API.Controllers.DataDictionary.DataDictionaryController.GetTreeAsync (Destiny.Core.TaskScheduler.API) - Validation state: "Valid"
+2020-04-27 13:39:32.381 +08:00 [INF] Executed DbCommand (49ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `d`.`Id`, `d`.`ParentId`, `d`.`Title` AS `title`
+FROM `DataDictionary` AS `d`
+WHERE `d`.`IsDeleted` = FALSE
+2020-04-27 13:39:32.425 +08:00 [INF] Executed action method Destiny.Core.TaskScheduler.API.Controllers.DataDictionary.DataDictionaryController.GetTreeAsync (Destiny.Core.TaskScheduler.API), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 11827.4361ms.
+2020-04-27 13:39:32.434 +08:00 [INF] Executing ObjectResult, writing value of type 'Destiny.Core.TaskScheduler.Shared.Extensions.ResultExtensions.TreeData`1[[Destiny.Core.TaskScheduler.Dtos.DataDictionaryDto.TreeDictionaryOutDto, Destiny.Core.TaskScheduler.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-04-27 13:39:32.562 +08:00 [INF] Executed action Destiny.Core.TaskScheduler.API.Controllers.DataDictionary.DataDictionaryController.GetTreeAsync (Destiny.Core.TaskScheduler.API) in 12626.5994ms
+2020-04-27 13:39:32.565 +08:00 [INF] Executed endpoint 'Destiny.Core.TaskScheduler.API.Controllers.DataDictionary.DataDictionaryController.GetTreeAsync (Destiny.Core.TaskScheduler.API)'
+2020-04-27 13:39:32.570 +08:00 [INF] Request finished in 12677.2217ms 200 application/json; charset=utf-8
+2020-04-27 13:40:13.788 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/api/DataDictionary/GetTree  
+2020-04-27 13:40:13.791 +08:00 [INF] Executing endpoint 'Destiny.Core.TaskScheduler.API.Controllers.DataDictionary.DataDictionaryController.GetTreeAsync (Destiny.Core.TaskScheduler.API)'
+2020-04-27 13:40:13.793 +08:00 [INF] Route matched with {action = "GetTree", controller = "DataDictionary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Destiny.Core.TaskScheduler.Shared.Extensions.ResultExtensions.TreeData`1[Destiny.Core.TaskScheduler.Dtos.DataDictionaryDto.TreeDictionaryOutDto]] GetTreeAsync() on controller Destiny.Core.TaskScheduler.API.Controllers.DataDictionary.DataDictionaryController (Destiny.Core.TaskScheduler.API).
+2020-04-27 13:40:13.807 +08:00 [INF] Entity Framework Core 3.1.3 initialized 'DefaultDbContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: MigrationsAssembly=Destiny.Core.TaskScheduler.Domain 
+2020-04-27 13:40:13.828 +08:00 [INF] Executing action method Destiny.Core.TaskScheduler.API.Controllers.DataDictionary.DataDictionaryController.GetTreeAsync (Destiny.Core.TaskScheduler.API) - Validation state: "Valid"
+2020-04-27 13:42:41.624 +08:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `d`.`Id`, `d`.`ParentId`, `d`.`Title` AS `title`
+FROM `DataDictionary` AS `d`
+WHERE `d`.`IsDeleted` = FALSE
+2020-04-27 13:43:05.416 +08:00 [INF] Executed action method Destiny.Core.TaskScheduler.API.Controllers.DataDictionary.DataDictionaryController.GetTreeAsync (Destiny.Core.TaskScheduler.API), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 171585.3277ms.
+2020-04-27 13:43:05.419 +08:00 [INF] Executing ObjectResult, writing value of type 'Destiny.Core.TaskScheduler.Shared.Extensions.ResultExtensions.TreeData`1[[Destiny.Core.TaskScheduler.Dtos.DataDictionaryDto.TreeDictionaryOutDto, Destiny.Core.TaskScheduler.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-04-27 13:43:05.422 +08:00 [INF] Executed action Destiny.Core.TaskScheduler.API.Controllers.DataDictionary.DataDictionaryController.GetTreeAsync (Destiny.Core.TaskScheduler.API) in 171626.2131ms
+2020-04-27 13:43:05.423 +08:00 [INF] Executed endpoint 'Destiny.Core.TaskScheduler.API.Controllers.DataDictionary.DataDictionaryController.GetTreeAsync (Destiny.Core.TaskScheduler.API)'
+2020-04-27 13:43:05.426 +08:00 [INF] Request finished in 171637.2224ms 200 application/json; charset=utf-8

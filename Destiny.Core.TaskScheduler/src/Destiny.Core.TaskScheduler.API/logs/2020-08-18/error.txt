@@ -1,0 +1,33 @@
+2020-08-18 10:26:19.116 +08:00 [ERR] Error mapping types.
+
+Mapping types:
+Object -> IEnumerable`1
+System.Object -> System.Collections.Generic.IEnumerable`1[[System.Collections.Generic.List`1[[Destiny.Core.TaskScheduler.Shared.Audit.AuditEntry, Destiny.Core.TaskScheduler.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+Object -> IEnumerable`1
+System.Object -> System.Collections.Generic.IEnumerable`1[[System.Collections.Generic.List`1[[Destiny.Core.TaskScheduler.Shared.Audit.AuditEntry, Destiny.Core.TaskScheduler.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
+ ---> AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+AuditEntryInputDto -> List`1
+Destiny.Core.TaskScheduler.Shared.Audit.AuditEntryInputDto -> System.Collections.Generic.List`1[[Destiny.Core.TaskScheduler.Shared.Audit.AuditEntry, Destiny.Core.TaskScheduler.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+   at lambda_method(Closure , AuditEntryInputDto , List`1 , ResolutionContext )
+   at lambda_method(Closure , Object , IEnumerable`1 , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method(Closure , Object , IEnumerable`1 , ResolutionContext )
+   at Destiny.Core.TaskScheduler.Shared.Extensions.AutoMapperExtension.MapToList[TTarget](IEnumerable`1 sources) in E:\sirengithub\Destiny.Core.TaskScheduler.Base\Destiny.Core.TaskScheduler\src\Destiny.Core.TaskScheduler.Shared\Extensions\AutoMapperExtension.cs:line 65
+   at Destiny.Core.TaskScheduler.Application.Audit.AuditStoreContract.SaveAudit(List`1 audit) in E:\sirengithub\Destiny.Core.TaskScheduler.Base\Destiny.Core.TaskScheduler\src\Destiny.Core.TaskScheduler.Application\Audit\AuditStoreContract.cs:line 30
+   at Destiny.Core.TaskScheduler.AspNetCore.Filters.AuditLogFilter.OnResultExecuted(ResultExecutedContext context) in E:\sirengithub\Destiny.Core.TaskScheduler.Base\Destiny.Core.TaskScheduler\src\Destiny.Core.TaskScheduler.AspNetCore\Filters\AuditLogFilter.cs:line 51
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Destiny.Core.TaskScheduler.AspNetCore.Middleware.ExceptionHandlingMiddleware.Invoke(HttpContext context) in E:\sirengithub\Destiny.Core.TaskScheduler.Base\Destiny.Core.TaskScheduler\src\Destiny.Core.TaskScheduler.AspNetCore\Middleware\ExceptionHandlingMiddleware.cs:line 30

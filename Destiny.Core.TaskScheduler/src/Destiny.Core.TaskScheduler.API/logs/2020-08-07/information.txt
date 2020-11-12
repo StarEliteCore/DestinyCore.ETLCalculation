@@ -1,0 +1,36 @@
+2020-08-07 14:31:49.332 +08:00 [INF] Now listening on: http://localhost:8001
+2020-08-07 14:31:49.424 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-08-07 14:31:49.426 +08:00 [INF] Hosting environment: Development
+2020-08-07 14:31:49.428 +08:00 [INF] Content root path: E:\sirengithub\Destiny.Core.TaskScheduler.Base\Destiny.Core.TaskScheduler\src\Destiny.Core.TaskScheduler.API
+2020-08-07 14:36:58.196 +08:00 [INF] Now listening on: http://localhost:8001
+2020-08-07 14:36:58.237 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-08-07 14:36:58.240 +08:00 [INF] Hosting environment: Development
+2020-08-07 14:36:58.241 +08:00 [INF] Content root path: E:\sirengithub\Destiny.Core.TaskScheduler.Base\Destiny.Core.TaskScheduler\src\Destiny.Core.TaskScheduler.API
+2020-08-07 14:57:48.412 +08:00 [INF] Now listening on: http://localhost:8001
+2020-08-07 14:57:48.455 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-08-07 14:57:48.458 +08:00 [INF] Hosting environment: Development
+2020-08-07 14:57:48.459 +08:00 [INF] Content root path: E:\sirengithub\Destiny.Core.TaskScheduler.Base\Destiny.Core.TaskScheduler\src\Destiny.Core.TaskScheduler.API
+2020-08-07 15:02:11.206 +08:00 [INF] Now listening on: http://localhost:8001
+2020-08-07 15:02:11.252 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-08-07 15:02:11.254 +08:00 [INF] Hosting environment: Development
+2020-08-07 15:02:11.255 +08:00 [INF] Content root path: E:\sirengithub\Destiny.Core.TaskScheduler.Base\Destiny.Core.TaskScheduler\src\Destiny.Core.TaskScheduler.API
+2020-08-07 15:03:11.777 +08:00 [INF] Now listening on: http://localhost:8001
+2020-08-07 15:03:11.819 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-08-07 15:03:11.822 +08:00 [INF] Hosting environment: Development
+2020-08-07 15:03:11.823 +08:00 [INF] Content root path: E:\sirengithub\Destiny.Core.TaskScheduler.Base\Destiny.Core.TaskScheduler\src\Destiny.Core.TaskScheduler.API
+2020-08-07 15:06:09.427 +08:00 [INF] Now listening on: http://localhost:8001
+2020-08-07 15:06:09.466 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-08-07 15:06:09.469 +08:00 [INF] Hosting environment: Development
+2020-08-07 15:06:09.470 +08:00 [INF] Content root path: E:\sirengithub\Destiny.Core.TaskScheduler.Base\Destiny.Core.TaskScheduler\src\Destiny.Core.TaskScheduler.API
+2020-08-07 15:10:19.140 +08:00 [INF] Now listening on: http://localhost:8001
+2020-08-07 15:10:19.180 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-08-07 15:10:19.183 +08:00 [INF] Hosting environment: Development
+2020-08-07 15:10:19.184 +08:00 [INF] Content root path: E:\sirengithub\Destiny.Core.TaskScheduler.Base\Destiny.Core.TaskScheduler\src\Destiny.Core.TaskScheduler.API
+2020-08-07 15:15:20.369 +08:00 [INF] Now listening on: http://localhost:8001
+2020-08-07 15:15:20.412 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-08-07 15:15:20.415 +08:00 [INF] Hosting environment: Development
+2020-08-07 15:15:20.417 +08:00 [INF] Content root path: E:\sirengithub\Destiny.Core.TaskScheduler.Base\Destiny.Core.TaskScheduler\src\Destiny.Core.TaskScheduler.API
+2020-08-07 15:17:29.318 +08:00 [INF] Now listening on: http://localhost:8001
+2020-08-07 15:17:29.358 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-08-07 15:17:29.361 +08:00 [INF] Hosting environment: Development
+2020-08-07 15:17:29.362 +08:00 [INF] Content root path: E:\sirengithub\Destiny.Core.TaskScheduler.Base\Destiny.Core.TaskScheduler\src\Destiny.Core.TaskScheduler.API
