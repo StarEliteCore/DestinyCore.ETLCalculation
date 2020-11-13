@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
@@ -8,11 +8,12 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.2.0" />
   </ItemGroup>
 
-<ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Destiny.Core.TaskScheduler.Aop\Destiny.Core.TaskScheduler.Aop.csproj" />
     <ProjectReference Include="..\Destiny.Core.TaskScheduler.Domain.Models\Destiny.Core.TaskScheduler.Domain.Models.csproj" />
     <ProjectReference Include="..\Destiny.Core.TaskScheduler.Domain.Repository\Destiny.Core.TaskScheduler.Domain.Repository.csproj" />
     <ProjectReference Include="..\Destiny.Core.TaskScheduler.MongoDB\Destiny.Core.TaskScheduler.MongoDB.csproj" />
     <ProjectReference Include="..\Destiny.Core.TaskScheduler.Shared\Destiny.Core.TaskScheduler.Shared.csproj" />
     <ProjectReference Include="..\Destiny.Core.TaskScheduler.Dtos\Destiny.Core.TaskScheduler.Dtos.csproj" />
-  </ItemGroup></Project>
+  </ItemGroup>
+</Project>

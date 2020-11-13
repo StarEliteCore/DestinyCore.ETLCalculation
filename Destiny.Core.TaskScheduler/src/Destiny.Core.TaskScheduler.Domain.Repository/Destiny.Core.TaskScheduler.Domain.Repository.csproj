@@ -7,7 +7,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Destiny.Core.TaskScheduler.Domain.Models\Destiny.Core.TaskScheduler.Domain.Models.csproj" />
     <ProjectReference Include="..\Destiny.Core.TaskScheduler.EntityFrameworkCore\Destiny.Core.TaskScheduler.EntityFrameworkCore.csproj" />
-    <ProjectReference Include="..\Destiny.Core.TaskScheduler.Identity\Destiny.Core.TaskScheduler.Identity.csproj" />
     <ProjectReference Include="..\Destiny.Core.TaskScheduler.Shared\Destiny.Core.TaskScheduler.Shared.csproj" />
   </ItemGroup>
 

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
@@ -6,8 +6,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Destiny.Core.TaskScheduler.EntityFrameworkCore\Destiny.Core.TaskScheduler.EntityFrameworkCore.csproj" />
-    <ProjectReference Include="..\Destiny.Core.TaskScheduler.IdentityServerFour\Destiny.Core.TaskScheduler.IdentityServerFour.csproj" />
-    <ProjectReference Include="..\Destiny.Core.TaskScheduler.Identity\Destiny.Core.TaskScheduler.Identity.csproj" />
     <ProjectReference Include="..\Destiny.Core.TaskScheduler.Shared\Destiny.Core.TaskScheduler.Shared.csproj" />
   </ItemGroup>
 
