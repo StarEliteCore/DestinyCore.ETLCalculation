@@ -1,9 +1,0 @@
-2020-11-03 14:16:28.724 +08:00 [INF] User profile is available. Using 'C:\Users\wangzhewei\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
-2020-11-03 14:17:37.324 +08:00 [INF] User profile is available. Using 'C:\Users\wangzhewei\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
-2020-11-03 14:18:04.206 +08:00 [INF] User profile is available. Using 'C:\Users\wangzhewei\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
-2020-11-03 14:20:06.228 +08:00 [INF] User profile is available. Using 'C:\Users\wangzhewei\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
-2020-11-03 15:27:15.564 +08:00 [INF] User profile is available. Using 'C:\Users\wangzhewei\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
-2020-11-03 15:27:15.940 +08:00 [INF] Now listening on: http://localhost:8001
-2020-11-03 15:27:15.944 +08:00 [INF] Application started. Press Ctrl+C to shut down.
-2020-11-03 15:27:15.946 +08:00 [INF] Hosting environment: Development
-2020-11-03 15:27:15.947 +08:00 [INF] Content root path: E:\sirengithub\Destiny.Core.TaskScheduler.Base\Destiny.Core.TaskScheduler\src\Destiny.Core.TaskScheduler.API

@@ -1,0 +1,59 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="MediatRTest.cs" />
+    <Compile Remove="SuktDependencyModuleTest.cs" />
+    <Compile Remove="SuktTestAutoMapper.cs" />
+    <Compile Remove="SuktTestServerFixtureBase.cs" />
+    <Compile Remove="SuktTestStartup.cs" />
+    <Compile Remove="SuktWebApplicationFactory.cs" />
+    <Compile Remove="UnitTest1.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="appsettings.Development.json" />
+    <None Remove="appsettings.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="appsettings.Development.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="3.1.7" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="coverlet.collector" Version="1.3.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\src\DestinyCore.ETLCalculation.AutoMapper\DestinyCore.ETLCalculation.AutoMapper.csproj" />
+    <ProjectReference Include="..\src\DestinyCore.ETLCalculation.CodeGenerator\DestinyCore.ETLCalculation.CodeGenerator.csproj" />
+    <ProjectReference Include="..\src\DestinyCore.ETLCalculation.MongoDB\DestinyCore.ETLCalculation.MongoDB.csproj" />
+    <ProjectReference Include="..\src\DestinyCore.ETLCalculation.Shared\DestinyCore.ETLCalculation.Shared.csproj" />
+    <ProjectReference Include="..\src\DestinyCore.ETLCalculation.TestBase\DestinyCore.ETLCalculation.TestBase.csproj" />
+  </ItemGroup>
+
+</Project>

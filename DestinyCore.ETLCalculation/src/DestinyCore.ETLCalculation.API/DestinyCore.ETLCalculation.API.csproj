@@ -1,0 +1,73 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>cceb6c5c-9aca-466d-9fe6-a019e910f92b</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..</DockerfileContext>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>.\DestinyCore.ETLCalculation.API.xml</DocumentationFile>
+    <NoWarn>1701;1702;1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Startups\AopModule.cs" />
+    <Compile Remove="Startups\AspNetCoreAOPModule.cs" />
+    <Compile Remove="Startups\ConsulModule.cs" />
+    <Compile Remove="Startups\CSRedisModule.cs" />
+    <Compile Remove="Startups\EventBusAppModule.cs" />
+    <Compile Remove="Startups\SuktAspNetCoreMvcModule.cs" />
+    <Compile Remove="Startups\SuktAutoMapperModule.cs" />
+    <Compile Remove="Startups\SwaggerModule.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AspectCore.Extensions.Hosting" Version="2.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.9" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.9" />
+    <PackageReference Include="Microsoft.DotNet.PlatformAbstractions" Version="3.1.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.9">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.9" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.8" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+    <PackageReference Include="Serilog" Version="2.10.0" />
+    <PackageReference Include="Serilog.AspNetCore" Version="3.4.0" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
+    <PackageReference Include="Serilog.Sinks.File" Version="4.1.0" />
+    <PackageReference Include="SkyAPM.Agent.AspNetCore" Version="1.0.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DestinyCore.ETLCalculation.Aop\DestinyCore.ETLCalculation.Aop.csproj" />
+    <ProjectReference Include="..\DestinyCore.ETLCalculation.Application\DestinyCore.ETLCalculation.Application.csproj" />
+    <ProjectReference Include="..\DestinyCore.ETLCalculation.AspNetCore\DestinyCore.ETLCalculation.AspNetCore.csproj" />
+    <ProjectReference Include="..\DestinyCore.ETLCalculation.AutoMapper\DestinyCore.ETLCalculation.AutoMapper.csproj" />
+    <ProjectReference Include="..\DestinyCore.ETLCalculation.Consul\DestinyCore.ETLCalculation.Consul.csproj" />
+    <ProjectReference Include="..\DestinyCore.ETLCalculation.Dtos\DestinyCore.ETLCalculation.Dtos.csproj" />
+    <ProjectReference Include="..\DestinyCore.ETLCalculation.MultiTenancy\DestinyCore.ETLCalculation.MultiTenancy.csproj" />
+    <ProjectReference Include="..\DestinyCore.ETLCalculation.Redis\DestinyCore.ETLCalculation.Redis.csproj" />
+    <ProjectReference Include="..\DestinyCore.ETLCalculation.SeriLog\DestinyCore.ETLCalculation.SeriLog.csproj" />
+    <ProjectReference Include="..\DestinyCore.ETLCalculation.Swagger\DestinyCore.ETLCalculation.Swagger.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Dockerfile">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SuktCoreMongoDb.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ProjectExtensions>
+    <VisualStudio><UserProperties appsettings_1development_1json__JsonSchema="https://json.schemastore.org/appsettings" appsettings_1json__JsonSchema="" /></VisualStudio>
+  </ProjectExtensions>
+
+
+</Project>

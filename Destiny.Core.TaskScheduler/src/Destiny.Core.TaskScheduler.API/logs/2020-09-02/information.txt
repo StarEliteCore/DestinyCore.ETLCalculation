@@ -1,4 +1,0 @@
-2020-09-02 09:38:45.201 +08:00 [INF] Now listening on: http://localhost:8001
-2020-09-02 09:38:45.249 +08:00 [INF] Application started. Press Ctrl+C to shut down.
-2020-09-02 09:38:45.251 +08:00 [INF] Hosting environment: Development
-2020-09-02 09:38:45.252 +08:00 [INF] Content root path: E:\sirengithub\Destiny.Core.TaskScheduler.Base\Destiny.Core.TaskScheduler\src\Destiny.Core.TaskScheduler.API

@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.2.0" />
+    <PackageReference Include="SuperSocket.Client" Version="2.0.0-beta7" />
+  </ItemGroup>
+
+<ItemGroup>
+    <ProjectReference Include="..\DestinyCore.ETLCalculation.Aop\DestinyCore.ETLCalculation.Aop.csproj" />
+    <ProjectReference Include="..\DestinyCore.ETLCalculation.Domain.Models\DestinyCore.ETLCalculation.Domain.Models.csproj" />
+    <ProjectReference Include="..\DestinyCore.ETLCalculation.Domain.Repository\DestinyCore.ETLCalculation.Domain.Repository.csproj" />
+    <ProjectReference Include="..\DestinyCore.ETLCalculation.MongoDB\DestinyCore.ETLCalculation.MongoDB.csproj" />
+    <ProjectReference Include="..\DestinyCore.ETLCalculation.Shared\DestinyCore.ETLCalculation.Shared.csproj" />
+    <ProjectReference Include="..\DestinyCore.ETLCalculation.Dtos\DestinyCore.ETLCalculation.Dtos.csproj" />
+  </ItemGroup></Project>

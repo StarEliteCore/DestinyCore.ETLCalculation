@@ -1,2 +1,0 @@
-2020-09-14 17:06:27.919 +08:00 [INF] User profile is available. Using 'C:\Users\wangzhewei\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
-2020-09-14 17:22:27.273 +08:00 [INF] User profile is available. Using 'C:\Users\wangzhewei\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
