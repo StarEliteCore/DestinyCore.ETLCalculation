@@ -21,5 +21,22 @@ namespace IDN.Service.ETLWorkFlow.Node.Dtos.DataFlowDto
         /// </summary>
         [DisplayName("运行顺序")]
         public int Sort { get; set; }
+        /// <summary>
+        /// 标题
+        /// </summary>
+        [DisplayName("标题")]
+        public string Title { get; set; }
+        /// <summary>
+        /// 组件类型
+        /// </summary>
+        [DisplayName("组件类型")]
+        public string AssemblyType { get; set; }
+        /// <summary>
+        /// 描述
+        /// </summary>
+        [DisplayName("描述")]
+        public string Describe { get; set; }
+
+
     }
 }

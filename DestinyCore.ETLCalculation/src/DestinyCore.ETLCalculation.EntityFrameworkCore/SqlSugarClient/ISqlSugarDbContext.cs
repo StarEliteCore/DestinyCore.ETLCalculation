@@ -1,4 +1,4 @@
-﻿using IDN.Service.ETLWorkFlow.Node.Shared;
+﻿using DestinyCore.ETLCalculation.Shared;
 using SqlSugar;
 
 namespace IDN.Service.ETLWorkFlow.Node.EntityFrameworkCore.SqlSugar
