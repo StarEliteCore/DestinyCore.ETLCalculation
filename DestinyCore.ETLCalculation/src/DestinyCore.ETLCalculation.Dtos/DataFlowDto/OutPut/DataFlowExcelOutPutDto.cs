@@ -7,7 +7,7 @@ namespace IDN.Service.ETLWorkFlow.Node.Dtos.DataFlowDto.OutPut
     /// Excel输出组件
     /// </summary>
     [DisplayName("Excel输出组件")]
-    public class DataFlowExcelOutPutDto : INodeDto
+    public class DataFlowExcelOutPutDto : Node
     {
         /// <summary>
         /// 字段列表

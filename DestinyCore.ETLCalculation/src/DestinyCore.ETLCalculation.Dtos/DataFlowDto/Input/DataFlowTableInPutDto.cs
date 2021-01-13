@@ -7,7 +7,7 @@ namespace IDN.Service.ETLWorkFlow.Node.Dtos.DataFlowDto
     /// 表输入组件对象
     /// </summary>
     [DisplayName("表输入组件对象")]
-    public class DataFlowTableInPutDto : INodeDto
+    public class DataFlowTableInPutDto : Node
     {
         /// <summary>
         /// 字段列表

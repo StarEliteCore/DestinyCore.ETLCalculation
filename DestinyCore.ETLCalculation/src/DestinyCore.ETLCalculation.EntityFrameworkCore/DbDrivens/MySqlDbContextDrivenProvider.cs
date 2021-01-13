@@ -1,7 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
-using DestinyCore.ETLCalculation.Shared.AppOption;
+﻿using DestinyCore.ETLCalculation.Shared.AppOption;
 using DestinyCore.ETLCalculation.Shared.DbContextDriven;
 using DestinyCore.ETLCalculation.Shared.Entity;
+using Microsoft.EntityFrameworkCore;
 
 namespace DestinyCore.ETLCalculation.EntityFrameworkCore.DbDrivens
 {

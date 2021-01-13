@@ -1,4 +1,6 @@
 ﻿using DestinyCore.ETLCalculation.Dataflow;
+using IDN.Service.ETLWorkFlow.Node.Dtos.DataFlowDto;
+using IDN.Service.ETLWorkFlow.Node.Dtos.DataFlowDto.Enum;
 using IDN.Service.ETLWorkFlow.Node.EntityFrameworkCore.SqlSugar;
 using System;
 using System.Collections.Generic;
@@ -71,6 +73,19 @@ namespace DestinyCore.ETLCalculation.Application.Test
             var linkOptions = new DataflowLinkOptions { PropagateCompletion = true };
             downloadString.LinkTo(printReversedWords, linkOptions);
             downloadString.Post("1111");
+
+            List<DataFlowNodeDto> nodes = new List<DataFlowNodeDto>()
+            {
+                new DataFlowNodeDto(){NodeType=NodeTypeEnum.InputTable,Sort=0,Title="",},
+                new DataFlowNodeDto(){NodeType=NodeTypeEnum.OutputExcel,Sort=0,Title="",},
+            };
+
+
+
+
+
+
+
         }
     }
 }
