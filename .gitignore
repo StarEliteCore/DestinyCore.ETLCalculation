@@ -381,3 +381,6 @@ src/Destiny.Core.Flow.API/DestinyCoreMongoDb.txt
 /src/Destiny.Core.Flow.AuthenticationCenter/DestinyCoreDb.txt
 /src/Destiny.Core.Flow.AuthenticationCenter/DestinyCoreMongoDb.txt
 /src/Destiny.Core.Flow.AuthenticationCenter/DestinyCoreRedis.txt
+/DestinyCore.ETLCalculation/src/DestinyCore.ETLCalculation.API/SuktCoreRedis.txt
+/DestinyCore.ETLCalculation/src/DestinyCore.ETLCalculation.API/SuktCoreMongoDb.txt
+/DestinyCore.ETLCalculation/src/DestinyCore.ETLCalculation.API/SuktCoreDB.txt
