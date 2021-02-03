@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DestinyCore.ETLCalculation.ETLCore.DataFlow
+namespace DestinyCore.ETLCalculation.ETLCore.BlockOptions
 {
-    public interface IDataFlowData
+    /// <summary>
+    /// Block传输对象基类
+    /// </summary>
+    public interface IBlockOption
     {
         /// <summary>
         /// 执行节点的Id
@@ -14,7 +17,7 @@ namespace DestinyCore.ETLCalculation.ETLCore.DataFlow
         /// </summary>
         Guid FlowId { get; set; }
         /// <summary>
-        /// 传输数据
+        /// 数据传输集合
         /// </summary>
         Dictionary<string, object> Data { get; set; }
     }
