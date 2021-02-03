@@ -69,7 +69,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DestinyCore.ETLCalculation.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DestinyCore.ETLCalculation.Node", "src\DestinyCore.ETLCalculation.Node\DestinyCore.ETLCalculation.Node.csproj", "{A3314EF0-94E3-4ABC-8EDE-1980B6422CD4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DestinyCore.ETLCalculation.ETLCore", "..\src\DestinyCore.ETLCalculation.ETLCore\DestinyCore.ETLCalculation.ETLCore.csproj", "{BDF702B6-77EA-484A-BB47-61979A61E51E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DestinyCore.ETLCalculation.ETLCore", "src\DestinyCore.ETLCalculation.ETLCore\DestinyCore.ETLCalculation.ETLCore.csproj", "{BDF702B6-77EA-484A-BB47-61979A61E51E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

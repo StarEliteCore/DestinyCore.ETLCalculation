@@ -10,10 +10,10 @@
   </ItemGroup>
 
 <ItemGroup>
-    <ProjectReference Include="..\..\..\src\DestinyCore.ETLCalculation.ETLCore\DestinyCore.ETLCalculation.ETLCore.csproj" />
     <ProjectReference Include="..\DestinyCore.ETLCalculation.Aop\DestinyCore.ETLCalculation.Aop.csproj" />
     <ProjectReference Include="..\DestinyCore.ETLCalculation.Domain.Models\DestinyCore.ETLCalculation.Domain.Models.csproj" />
     <ProjectReference Include="..\DestinyCore.ETLCalculation.Domain.Repository\DestinyCore.ETLCalculation.Domain.Repository.csproj" />
+    <ProjectReference Include="..\DestinyCore.ETLCalculation.ETLCore\DestinyCore.ETLCalculation.ETLCore.csproj" />
     <ProjectReference Include="..\DestinyCore.ETLCalculation.MongoDB\DestinyCore.ETLCalculation.MongoDB.csproj" />
     <ProjectReference Include="..\DestinyCore.ETLCalculation.Shared\DestinyCore.ETLCalculation.Shared.csproj" />
     <ProjectReference Include="..\DestinyCore.ETLCalculation.Dtos\DestinyCore.ETLCalculation.Dtos.csproj" />
