@@ -11,6 +11,7 @@ using DestinyCore.ETLCalculation.Shared.SuktReflection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Principal;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -26,6 +27,7 @@ namespace DestinyCore.ETLCalculation.Shared
         private readonly IGetChangeTracker _changeTracker;
         protected readonly ILogger _logger = null;
         protected readonly AuditEntryDictionaryScoped _auditEntryDictionaryScoped;
+        private readonly IPrincipal _principal;
         /// <summary>
         /// 构造函数
         /// </summary>
@@ -38,6 +40,7 @@ namespace DestinyCore.ETLCalculation.Shared
             this._logger = serviceProvider.GetLogger(GetType());
             _auditEntryDictionaryScoped = serviceProvider.GetService<AuditEntryDictionaryScoped>();
             _changeTracker = _serviceProvider.GetService<IGetChangeTracker>();
+            _principal = serviceProvider.GetService<IPrincipal>();
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -111,6 +114,25 @@ namespace DestinyCore.ETLCalculation.Shared
         protected virtual IEnumerable<EntityEntry> FindChangedEntries()
         {
             return this.ChangeTracker.Entries().Where(x => x.State == EntityState.Added || x.State == EntityState.Deleted || x.State == EntityState.Modified).ToList();
+        }
+        protected virtual void ApplyConcepts()
+        {
+            var entries = this.FindChangedEntries().ToList();
+            foreach (var entity in entries)
+            {
+                if (entity.Entity is ICreatedAudited<Guid> createdTime && entity.State == EntityState.Added)
+                {
+                    createdTime.CreatedAt = DateTime.Now;
+                    if (_principal != null && _principal.Identity != null)
+                        createdTime.CreatedId = _principal.Identity.GetUesrId<Guid>();
+                }
+                if (entity.Entity is IModifyAudited<Guid> ModificationAuditedUserId && entity.State == EntityState.Modified)
+                {
+                    ModificationAuditedUserId.LastModifedAt = DateTime.Now;
+                    if (_principal != null && _principal.Identity != null)
+                        ModificationAuditedUserId.LastModifyId = _principal.Identity.GetUesrId<Guid>();
+                }
+            }
         }
     }
 }

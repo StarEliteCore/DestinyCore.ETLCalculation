@@ -1,10 +1,12 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using DestinyCore.ETLCalculation.Shared.AppOption;
 using DestinyCore.ETLCalculation.Shared.Extensions;
 using DestinyCore.ETLCalculation.Shared.Modules;
 using System;
+using System.Security.Principal;
 using System.Threading.Tasks;
 
 namespace DestinyCore.ETLCalculation.API.Startups
@@ -47,6 +49,11 @@ namespace DestinyCore.ETLCalculation.API.Startups
                     }
 
                 };
+            });
+            service.AddTransient<IPrincipal>(provider =>
+            {
+                IHttpContextAccessor accessor = provider.GetService<IHttpContextAccessor>();
+                return accessor?.HttpContext?.User;
             });
         }
     }

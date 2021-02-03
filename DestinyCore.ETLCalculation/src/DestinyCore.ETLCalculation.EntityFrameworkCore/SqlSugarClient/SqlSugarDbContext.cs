@@ -3,7 +3,7 @@ using Microsoft.Extensions.Logging;
 using SqlSugar;
 using System;
 
-namespace IDN.Service.ETLWorkFlow.Node.EntityFrameworkCore.SqlSugar
+namespace DestinyCore.ETLCalculation.EntityFrameworkCore
 {
     public class SqlSugarDbContext : ISqlSugarDbContext
     {

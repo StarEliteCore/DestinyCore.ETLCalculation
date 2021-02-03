@@ -1,7 +1,7 @@
 ﻿using DestinyCore.ETLCalculation.Shared;
 using SqlSugar;
 
-namespace IDN.Service.ETLWorkFlow.Node.EntityFrameworkCore.SqlSugar
+namespace DestinyCore.ETLCalculation.EntityFrameworkCore
 {
     public interface ISqlSugarDbContext : IScopedDependency
     {

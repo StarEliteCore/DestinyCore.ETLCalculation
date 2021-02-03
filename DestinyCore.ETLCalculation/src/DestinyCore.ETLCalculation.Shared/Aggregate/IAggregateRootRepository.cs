@@ -1,14 +1,15 @@
-﻿using DestinyCore.ETLCalculation.Shared.OperationResult;
+﻿using DestinyCore.ETLCalculation.Shared.Entity;
+using DestinyCore.ETLCalculation.Shared.OperationResult;
 using System;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace DestinyCore.ETLCalculation.Shared.Entity
+namespace DestinyCore.ETLCalculation.Shared
 {
-    public interface IEFCoreRepository<TEntity, Tkey>
-        where TEntity : IEntity<Tkey>
+    public interface IAggregateRootRepository<TEntity, Tkey>
+        where TEntity : IAggregateRoot<Tkey>
     {
         IUnitOfWork UnitOfWork { get; }
 
@@ -71,7 +72,6 @@ namespace DestinyCore.ETLCalculation.Shared.Entity
         /// <param name="entity">要插入实体</param>
         /// <returns>影响的行数</returns>
         Task<OperationResponse> InsertAsync(TEntity entity);
-        Task<OperationResponse> InsertAsync(TEntity entity, Func<TEntity, Task> checkFunc = null, Func<TEntity, TEntity, Task<TEntity>> insertFunc = null, Func<TEntity, TEntity> completeFunc = null);
 
         /// <summary>
         /// 以异步批量插入实体
@@ -140,14 +140,14 @@ namespace DestinyCore.ETLCalculation.Shared.Entity
         /// </summary>
         /// <param name="predicate">查询条件谓语表达式</param>
         /// <returns>操作影响的行数</returns>
-        Task<OperationResponse> DeleteBatchAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken = default(CancellationToken));
+        Task<int> DeleteBatchAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// 删除
         /// </summary>
         /// <param name="entitys">要删除实体集合</param>
         /// <returns>操作影响的行数</returns>
-        OperationResponse Delete(params TEntity[] entitys);
+        int Delete(params TEntity[] entitys);
 
         #endregion 删除
     }
