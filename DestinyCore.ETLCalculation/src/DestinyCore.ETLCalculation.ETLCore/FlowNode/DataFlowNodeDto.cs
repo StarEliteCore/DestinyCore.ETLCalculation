@@ -1,7 +1,6 @@
-﻿using IDN.Service.ETLWorkFlow.Node.Dtos.DataFlowDto.Enum;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 
-namespace IDN.Service.ETLWorkFlow.Node.Dtos.DataFlowDto
+namespace DestinyCore.ETLCalculation.ETLCore
 {
     [DisplayName("节点运转Dto")]
     public class DataFlowNodeDto

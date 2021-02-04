@@ -1,7 +1,7 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using DestinyCore.ETLCalculation.EntityFrameworkCore;
+﻿using DestinyCore.ETLCalculation.EntityFrameworkCore;
 using DestinyCore.ETLCalculation.Shared.Entity;
 using DestinyCore.ETLCalculation.Shared.Modules;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace DestinyCore.ETLCalculation.Shared
 {

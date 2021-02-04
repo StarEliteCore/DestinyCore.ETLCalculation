@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
 
-namespace IDN.Service.ETLWorkFlow.Node.Dtos.DataFlowDto.OutPut
+namespace DestinyCore.ETLCalculation.ETLCore
 {
     /// <summary>
     /// Excel输出组件

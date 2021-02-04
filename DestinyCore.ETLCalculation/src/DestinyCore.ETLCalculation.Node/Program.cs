@@ -5,14 +5,14 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Logging;
 using System;
+using System.Threading.Tasks;
 
 namespace DestinyCore.ETLCalculation.Node
 {
     class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
-
             IServiceCollection services = new ServiceCollection();
             services.AddLogging(builder =>
             {
@@ -25,7 +25,7 @@ namespace DestinyCore.ETLCalculation.Node
             services.AddSingleton<IFileProvider>(new PhysicalFileProvider(basePath));
             IServiceProvider serviceProvider = services.BuildServiceProvider();
             var Test = serviceProvider.GetService<ITestBlock>();
-            Test.Run();
+            await Test.Run();
             Console.ReadKey();
             Console.WriteLine("Hello World!");
         }

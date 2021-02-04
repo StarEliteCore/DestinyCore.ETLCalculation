@@ -1,5 +1,4 @@
-﻿using SqlSugar;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace DestinyCore.ETLCalculation.ETLCore.BlockOptions.BlockInputOptions
@@ -26,9 +25,9 @@ namespace DestinyCore.ETLCalculation.ETLCore.BlockOptions.BlockInputOptions
         /// </summary>
         public string TableName { get; set; }
         /// <summary>
-        /// 数据库连接对象
+        /// 数据库连接字符串
         /// </summary>
-        public SqlSugarClient sqlSugarClient { get; set; }
+        public string ConnectionString { get; set; }
         /// <summary>
         /// 数据传输
         /// </summary>

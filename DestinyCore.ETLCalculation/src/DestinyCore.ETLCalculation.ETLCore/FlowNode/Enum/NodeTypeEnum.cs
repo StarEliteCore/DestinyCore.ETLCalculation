@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace IDN.Service.ETLWorkFlow.Node.Dtos.DataFlowDto.Enum
+namespace DestinyCore.ETLCalculation.ETLCore
 {
     /// <summary>
     /// 流程节点类型

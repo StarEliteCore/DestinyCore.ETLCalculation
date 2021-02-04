@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
 
-namespace IDN.Service.ETLWorkFlow.Node.Dtos.DataFlowDto
+namespace DestinyCore.ETLCalculation.ETLCore
 {
     /// <summary>
     /// 表输出组件对象
