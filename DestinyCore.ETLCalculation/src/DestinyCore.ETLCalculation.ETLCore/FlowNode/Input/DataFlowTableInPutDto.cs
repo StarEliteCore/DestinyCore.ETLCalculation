@@ -7,7 +7,7 @@ namespace DestinyCore.ETLCalculation.ETLCore
     /// 表输入组件对象
     /// </summary>
     [DisplayName("表输入组件对象")]
-    public class DataFlowTableInPutDto : Node
+    public class DataFlowTableInPutDto : INodeData
     {
         /// <summary>
         /// 字段列表

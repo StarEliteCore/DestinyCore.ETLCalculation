@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 
 namespace DestinyCore.ETLCalculation.ETLCore
 {
@@ -6,12 +7,17 @@ namespace DestinyCore.ETLCalculation.ETLCore
     public class DataFlowNodeDto
     {
         /// <summary>
+        /// 节点Id
+        /// </summary>
+        [DisplayName("节点Id")]
+        public Guid Id { get; set; }
+        /// <summary>
         /// 节点类型
         /// </summary>
         [DisplayName("节点类型")]
         public NodeTypeEnum NodeType { get; set; }
         /// <summary>
-        /// Node对象字符串
+        /// NodeData配置对象
         /// </summary>
         [DisplayName("Node对象字符串")]
         public string NodeJson { get; set; }
@@ -35,7 +41,5 @@ namespace DestinyCore.ETLCalculation.ETLCore
         /// </summary>
         [DisplayName("描述")]
         public string Describe { get; set; }
-
-
     }
 }

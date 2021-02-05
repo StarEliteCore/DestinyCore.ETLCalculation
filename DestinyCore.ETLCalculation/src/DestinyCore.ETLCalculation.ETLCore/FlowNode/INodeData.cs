@@ -1,6 +1,6 @@
 ﻿namespace DestinyCore.ETLCalculation.ETLCore
 {
-    public class Node
+    public interface INodeData
     {
     }
 }

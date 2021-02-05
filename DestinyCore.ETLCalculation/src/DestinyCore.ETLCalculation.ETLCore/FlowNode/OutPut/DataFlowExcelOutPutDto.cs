@@ -7,7 +7,7 @@ namespace DestinyCore.ETLCalculation.ETLCore
     /// Excel输出组件
     /// </summary>
     [DisplayName("Excel输出组件")]
-    public class DataFlowExcelOutPutDto : Node
+    public class DataFlowExcelOutPutDto : INodeData
     {
         /// <summary>
         /// 字段列表

@@ -1,4 +1,5 @@
-﻿using DestinyCore.ETLCalculation.ETLCore.BlockOptions.BlockInputOptions;
+﻿using DestinyCore.ETLCalculation.ETLCore;
+using DestinyCore.ETLCalculation.ETLCore.BlockOptions.BlockInputOptions;
 using DestinyCore.ETLCalculation.ETLCore.BlockOutput;
 using DestinyCore.ETLCalculation.ETLCore.DestinyCoreBlock.ReadData;
 using DestinyCore.ETLCalculation.ETLCore.ReadBlock.CleanData;
@@ -8,6 +9,7 @@ using DestinyCore.ETLCalculation.Shared.Extensions;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Threading.Tasks.Dataflow;
 
@@ -35,6 +37,13 @@ namespace DestinyCore.ETLCalculation.Application.Test
 
         public async Task Run()
         {
+            var degins = new FlowDto();
+            var starts = GetStart(degins.Nodes);
+
+            foreach (var item in starts)
+            {
+                var next = GetNext(degins, item.Id);
+            }
             _start = await Builder();
             var connectionString = "SuktCoreDB.txt";
             if (Path.GetExtension(connectionString).ToLower() == ".txt") //txt文件
@@ -49,10 +58,6 @@ namespace DestinyCore.ETLCalculation.Application.Test
                 TableName = "RecordOperationLog",
                 ConnectionString = connectionString
             };
-            //List<DataFlowNodeDto> nodes = new List<DataFlowNodeDto>()
-            //{
-            //    new DataFlowNodeDto(){NodeType=NodeTypeEnum.OutputTable,Sort=0,Title="",},
-            //};
             var trans = _transFormBlock.TransForm();
             var write = await _writeBlock.SetDataBlock(option);
             _start.LinkTo(trans, new DataflowLinkOptions() { PropagateCompletion = true });
@@ -120,6 +125,17 @@ namespace DestinyCore.ETLCalculation.Application.Test
                 ConnectionString = connectionString
             };
             return await _readSourceBlock.GetDataBlock(option);
+        }
+
+
+        public IEnumerable<DataFlowNodeDto> GetStart(List<DataFlowNodeDto> nodes)
+        {
+            return nodes.Where(x => x.NodeType == NodeTypeEnum.InputTable || x.NodeType == NodeTypeEnum.InputExcel);
+        }
+        public IEnumerable<DataFlowNodeDto> GetNext(FlowDto flow, Guid currennodeId)
+        {
+            var nextNodeId = flow.Edges.Where(x => x.Source.Cell == currennodeId).Select(x => x.Target.Cell);
+            return flow.Nodes.Where(a => nextNodeId.Contains(a.Id));
         }
     }
 }
