@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DestinyCore.ETLDispatchCenter.EntityFrameworkCore\DestinyCore.ETLDispatchCenter.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\DestinyCore.ETLDispatchCenter.Shared\DestinyCore.ETLDispatchCenter.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

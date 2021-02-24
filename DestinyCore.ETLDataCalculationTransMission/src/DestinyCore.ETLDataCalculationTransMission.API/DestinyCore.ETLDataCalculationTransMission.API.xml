@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DestinyCore.ETLDataCalculationTransMission.API</name>
+    </assembly>
+    <members>
+        <member name="M:DestinyCore.ETLDataCalculationTransMission.API.Controllers.DataDictionary.DataDictionaryController.CreateAsync(DestinyCore.ETLDataCalculationTransMission.Dtos.DataDictionaryDto.DataDictionaryInputDto)">
+            <summary>
+            添加一个数据字典
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DestinyCore.ETLDataCalculationTransMission.API.Controllers.DataDictionary.DataDictionaryController.UpdateAsync(DestinyCore.ETLDataCalculationTransMission.Dtos.DataDictionaryDto.DataDictionaryInputDto)">
+            <summary>
+            修改一个数据字典
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DestinyCore.ETLDataCalculationTransMission.API.Controllers.DataDictionary.DataDictionaryController.GetPageAsync(DestinyCore.ETLDataCalculationTransMission.Shared.Entity.PageRequest)">
+            <summary>
+            分页查询
+            </summary>
+            <param name="query"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DestinyCore.ETLDataCalculationTransMission.API.Controllers.DataDictionary.DataDictionaryController.DeleteAsyc(System.Nullable{System.Guid})">
+            <summary>
+            删除一个数据字典
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DestinyCore.ETLDataCalculationTransMission.API.Controllers.HealthController.Get">
+            <summary>
+            健康监测
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

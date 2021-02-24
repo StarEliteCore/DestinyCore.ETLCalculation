@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DestinyCore.ETLDataCalculationTransMission.Domain.Models\DestinyCore.ETLDataCalculationTransMission.Domain.Models.csproj" />
+    <ProjectReference Include="..\DestinyCore.ETLDataCalculationTransMission.Shared\DestinyCore.ETLDataCalculationTransMission.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
