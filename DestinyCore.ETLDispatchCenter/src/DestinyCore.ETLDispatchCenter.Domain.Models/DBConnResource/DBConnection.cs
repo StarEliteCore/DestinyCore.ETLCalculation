@@ -11,12 +11,12 @@ namespace DestinyCore.ETLDispatchCenter.Domain.Models.DBConnResource
     [DisplayName("数据库资源连接")]
     public class DBConnection : EntityBase<Guid>, IFullAuditedEntity<Guid>
     {
-        public DBConnection(string connectionName, string memo, string host, int prot, string userName, string passWord, DBTypeEnum dBType, int maxConnSize)
+        public DBConnection(string connectionName, string memo, string host, int port, string userName, string passWord, DBTypeEnum dBType, int maxConnSize)
         {
             ConnectionName = connectionName;
             Memo = memo;
             Host = host;
-            Prot = prot;
+            Port = port;
             UserName = userName;
             PassWord = passWord;
             DBType = dBType;
@@ -34,12 +34,12 @@ namespace DestinyCore.ETLDispatchCenter.Domain.Models.DBConnResource
         /// <param name="passWord"></param>
         /// <param name="dBType"></param>
         /// <param name="maxConnSize"></param>
-        public void Update(string connectionName, string memo, string host, int prot, string userName, string passWord, DBTypeEnum dBType, int maxConnSize)
+        public void Update(string connectionName, string memo, string host, int port, string userName, string passWord, DBTypeEnum dBType, int maxConnSize)
         {
             ConnectionName = connectionName;
             Memo = memo;
             Host = host;
-            Prot = prot;
+            Port = port;
             UserName = userName;
             PassWord = passWord;
             DBType = dBType;
@@ -73,7 +73,7 @@ namespace DestinyCore.ETLDispatchCenter.Domain.Models.DBConnResource
         /// 端口
         /// </summary>
         [DisplayName("端口")]
-        public int Prot { get; private set; }
+        public int Port { get; private set; }
         /// <summary>
         /// 用户名
         /// </summary>

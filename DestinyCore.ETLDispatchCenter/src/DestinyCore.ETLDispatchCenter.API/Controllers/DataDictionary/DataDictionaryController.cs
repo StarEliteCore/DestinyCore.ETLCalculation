@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using DestinyCore.ETLDispatchCenter.Application;
+﻿using DestinyCore.ETLDispatchCenter.Application;
 using DestinyCore.ETLDispatchCenter.AspNetCore.ApiBase;
 using DestinyCore.ETLDispatchCenter.Dtos.DataDictionaryDto;
 using DestinyCore.ETLDispatchCenter.Shared.AjaxResult;
@@ -8,6 +6,8 @@ using DestinyCore.ETLDispatchCenter.Shared.Audit;
 using DestinyCore.ETLDispatchCenter.Shared.Entity;
 using DestinyCore.ETLDispatchCenter.Shared.Extensions;
 using DestinyCore.ETLDispatchCenter.Shared.OperationResult;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System;
 using System.ComponentModel;
 using System.Threading.Tasks;
@@ -25,7 +25,6 @@ namespace DestinyCore.ETLDispatchCenter.API.Controllers.DataDictionary
             _dictionary = dictionary;
             _logger = logger;
         }
-
         /// <summary>
         /// 添加一个数据字典
         /// </summary>
@@ -38,7 +37,6 @@ namespace DestinyCore.ETLDispatchCenter.API.Controllers.DataDictionary
         {
             return (await _dictionary.InsertAsync(input)).ToAjaxResult();
         }
-
         /// <summary>
         /// 修改一个数据字典
         /// </summary>
@@ -51,7 +49,6 @@ namespace DestinyCore.ETLDispatchCenter.API.Controllers.DataDictionary
         {
             return (await _dictionary.UpdateAsync(input)).ToAjaxResult();
         }
-
         /// <summary>
         /// 分页查询
         /// </summary>
@@ -63,7 +60,6 @@ namespace DestinyCore.ETLDispatchCenter.API.Controllers.DataDictionary
         {
             return (await _dictionary.GetResultAsync(query)).PageList();
         }
-
         /// <summary>
         /// 删除一个数据字典
         /// </summary>

@@ -32,6 +32,46 @@
             <param name="id"></param>
             <returns></returns>
         </member>
+        <member name="T:DestinyCore.ETLDispatchCenter.API.Controllers.DBConnectionController">
+            <summary>
+            数据连接管理
+            </summary>
+        </member>
+        <member name="M:DestinyCore.ETLDispatchCenter.API.Controllers.DBConnectionController.CreateAsync(DestinyCore.ETLDispatchCenter.Dtos.DBConnResourceDto.DBConnResourceInputDto)">
+            <summary>
+            添加数据连接
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DestinyCore.ETLDispatchCenter.API.Controllers.DBConnectionController.UpdateAsync(DestinyCore.ETLDispatchCenter.Dtos.DBConnResourceDto.DBConnResourceInputDto)">
+            <summary>
+            修改数据连接
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DestinyCore.ETLDispatchCenter.API.Controllers.DBConnectionController.UpdateAsync(System.Nullable{System.Guid})">
+            <summary>
+            表单加载数据连接
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DestinyCore.ETLDispatchCenter.API.Controllers.DBConnectionController.GetPageLoadAsync(DestinyCore.ETLDispatchCenter.Shared.Entity.PageRequest)">
+            <summary>
+            分页加载数据连接
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DestinyCore.ETLDispatchCenter.API.Controllers.DBConnectionController.DeleteAsync(System.Nullable{System.Guid})">
+            <summary>
+            删除数据连接
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
         <member name="M:DestinyCore.ETLDispatchCenter.API.Controllers.HealthController.Get">
             <summary>
             健康监测
