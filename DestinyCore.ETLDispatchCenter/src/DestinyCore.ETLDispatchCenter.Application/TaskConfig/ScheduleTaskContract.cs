@@ -26,7 +26,7 @@ namespace DestinyCore.ETLDispatchCenter.Application.TaskConfig
         /// <returns></returns>
         public async Task<OperationResponse> CreateAsync(ScheduleTaskInputDto input)
         {
-            return await _scheduleTaskRepository.InsertAsync(new ScheduleTask(input.TaskNumber, input.TaskName, input.TaskType, input.TaskConfig, input.SourceConnectionId, input.TargetConnectionId, input.SourceTable, input.TargetTable));
+            return await _scheduleTaskRepository.InsertAsync(new ScheduleTask(input.TaskNumber, input.TaskName, input.TaskType, input.TaskConfig/*, input.SourceConnectionId, input.TargetConnectionId, input.SourceTable, input.TargetTable*/));
         }
         /// <summary>
         /// 修改任务配置
@@ -36,7 +36,7 @@ namespace DestinyCore.ETLDispatchCenter.Application.TaskConfig
         public async Task<OperationResponse> UpdateAsync(ScheduleTaskInputDto input)
         {
             ScheduleTask entity = await _scheduleTaskRepository.GetByIdAsync(input.Id);
-            entity.Change(input.TaskNumber, input.TaskName, input.TaskType, input.TaskConfig, input.SourceConnectionId, input.TargetConnectionId, input.SourceTable, input.TargetTable);
+            entity.Change(input.TaskNumber, input.TaskName, input.TaskType, input.TaskConfig/*, input.SourceConnectionId, input.TargetConnectionId, input.SourceTable, input.TargetTable*/);
             return await _scheduleTaskRepository.UpdateAsync(entity);
         }
         /// <summary>

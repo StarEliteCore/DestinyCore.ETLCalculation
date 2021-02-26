@@ -6,28 +6,28 @@ namespace DestinyCore.ETLDispatchCenter.Domain.Models.TaskConfig
 {
     public class ScheduleTask : EntityBase<Guid>, IFullAuditedEntity<Guid>
     {
-        public ScheduleTask(string taskNumber, string taskName, TaskTypeEnum taskType, string taskConfig, Guid sourceConnectionId, Guid targetConnectionId, string sourceTable, string targetTable)
+        public ScheduleTask(string taskNumber, string taskName, TaskTypeEnum taskType, string taskConfig/*, Guid sourceConnectionId, Guid targetConnectionId, string sourceTable, string targetTable*/)
         {
+            TaskNumber = taskNumber;
             TaskName = taskName;
             TaskType = taskType;
             TaskConfig = taskConfig;
-            SourceConnectionId = sourceConnectionId;
-            TargetConnectionId = targetConnectionId;
-            SourceTable = sourceTable;
-            TargetTable = targetTable;
-            TaskNumber = taskNumber;
+            //SourceConnectionId = sourceConnectionId;
+            //TargetConnectionId = targetConnectionId;
+            //SourceTable = sourceTable;
+            //TargetTable = targetTable;
         }
 
-        public void Change(string taskNumber, string taskName, TaskTypeEnum taskType, string taskConfig, Guid sourceConnectionId, Guid targetConnectionId, string sourceTable, string targetTable)
+        public void Change(string taskNumber, string taskName, TaskTypeEnum taskType, string taskConfig/*, Guid sourceConnectionId, Guid targetConnectionId, string sourceTable, string targetTable*/)
         {
+            TaskNumber = taskNumber;
             TaskName = taskName;
             TaskType = taskType;
             TaskConfig = taskConfig;
-            SourceConnectionId = sourceConnectionId;
-            TargetConnectionId = targetConnectionId;
-            SourceTable = sourceTable;
-            TargetTable = targetTable;
-            TaskNumber = taskNumber;
+            //SourceConnectionId = sourceConnectionId;
+            //TargetConnectionId = targetConnectionId;
+            //SourceTable = sourceTable;
+            //TargetTable = targetTable;
         }
         /// <summary>
         /// 任务编号
