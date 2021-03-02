@@ -1,12 +1,10 @@
 ﻿using AspectCore.Extensions.Hosting;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Serilog;
 using Serilog.Events;
-using DestinyCore.ETLDispatchCenter.SeriLog;
 using System;
 using System.IO;
 
@@ -25,17 +23,6 @@ namespace DestinyCore.ETLDispatchCenter.API
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>()
-                                        .ConfigureKestrel(options =>
-                                        {
-                                            //如果API项目需要接入GRPC服务需要配置两个Kestrel主机，分别指定两个不通端口，因为GRPC默认是使用https 
-
-
-                        // ADDED THIS LINE to fix the problem
-                        options.ListenAnyIP(80, o => o.Protocols =
-                            HttpProtocols.Http1);
-                        options.ListenAnyIP(8331, o => o.Protocols =
-                                                    HttpProtocols.Http2);
-                                        })
                     .UseSerilog((webHost, configuration) =>
                     {
 
