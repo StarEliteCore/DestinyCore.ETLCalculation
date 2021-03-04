@@ -32,7 +32,7 @@ namespace DestinyCore.ETLDispatchCenter.API.Startups
             {
                 Console.WriteLine($"{settings.Auth?.Authority}+++++++++++++++++++++{settings.Auth?.Audience}");
 
-                jwt.Authority = settings.Auth?.Authority ?? "http://10.1.40.210:8042";
+                jwt.Authority = settings.Auth?.Authority ?? "http://localhost:9860";
                 jwt.Audience = settings.Auth?.Audience ?? "IDN.Services.BasicsService.API";
                 jwt.RequireHttpsMetadata = false;
                 jwt.Events = new JwtBearerEvents /*jwt自带事件*/
