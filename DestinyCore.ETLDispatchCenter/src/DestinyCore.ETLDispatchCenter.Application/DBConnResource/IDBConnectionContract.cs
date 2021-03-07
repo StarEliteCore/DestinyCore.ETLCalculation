@@ -3,7 +3,9 @@ using DestinyCore.ETLDispatchCenter.Shared;
 using DestinyCore.ETLDispatchCenter.Shared.Entity;
 using DestinyCore.ETLDispatchCenter.Shared.Extensions.ResultExtensions;
 using DestinyCore.ETLDispatchCenter.Shared.OperationResult;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace DestinyCore.ETLDispatchCenter.Application.DBConnResource
@@ -40,5 +42,11 @@ namespace DestinyCore.ETLDispatchCenter.Application.DBConnResource
         /// <param name="id"></param>
         /// <returns></returns>
         Task<OperationResponse> DeleteAsync(Guid id);
+        /// <summary>
+        /// 获取下拉列表
+        /// </summary>
+        /// <returns></returns>
+        Task<OperationResponse<IEnumerable<SelectListItem>>> GetLoadSelectListItemAsync();
+
     }
 }

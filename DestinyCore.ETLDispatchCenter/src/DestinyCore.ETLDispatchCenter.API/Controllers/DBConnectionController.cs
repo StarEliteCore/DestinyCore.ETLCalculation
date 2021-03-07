@@ -84,5 +84,16 @@ namespace DestinyCore.ETLDispatchCenter.API.Controllers
         {
             return (await _dBConnectionContract.DeleteAsync(id.Value)).ToAjaxResult();
         }
+        /// <summary>
+        /// 数据连接下拉列表
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Description("数据连接下拉列表")]
+        public async Task<AjaxResult> GetLoadSelectListItemAsync()
+        {
+            return (await _dBConnectionContract.GetLoadSelectListItemAsync()).ToAjaxResult();
+        }
+        
     }
 }

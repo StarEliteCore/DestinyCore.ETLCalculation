@@ -72,10 +72,34 @@
             <param name="id"></param>
             <returns></returns>
         </member>
+        <member name="M:DestinyCore.ETLDispatchCenter.API.Controllers.DBConnectionController.GetLoadSelectListItemAsync">
+            <summary>
+            数据连接下拉列表
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:DestinyCore.ETLDispatchCenter.API.Controllers.HealthController.Get">
             <summary>
             健康监测
             </summary>
+            <returns></returns>
+        </member>
+        <member name="T:DestinyCore.ETLDispatchCenter.API.Controllers.ScheduleTaskController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:DestinyCore.ETLDispatchCenter.API.Controllers.ScheduleTaskController.GetLoadSelectListItemAsync">
+            <summary>
+            加载任务下拉列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DestinyCore.ETLDispatchCenter.API.Controllers.ScheduleTaskController.CreateAsync(DestinyCore.ETLDispatchCenter.Dtos.TaskConfig.ScheduleTaskInputDto)">
+            <summary>
+            添加任务
+            </summary>
+            <param name="input"></param>
             <returns></returns>
         </member>
     </members>

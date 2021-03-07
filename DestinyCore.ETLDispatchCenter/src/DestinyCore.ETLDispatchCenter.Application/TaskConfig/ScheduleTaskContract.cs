@@ -6,7 +6,11 @@ using DestinyCore.ETLDispatchCenter.Shared.Extensions;
 using DestinyCore.ETLDispatchCenter.Shared.Extensions.ResultExtensions;
 using DestinyCore.ETLDispatchCenter.Shared.OperationResult;
 using DestinyCore.ETLDispatchCenter.Shared.ResultMessageConst;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace DestinyCore.ETLDispatchCenter.Application.TaskConfig
@@ -66,6 +70,21 @@ namespace DestinyCore.ETLDispatchCenter.Application.TaskConfig
         public async Task<OperationResponse> DeleteAsync(Guid id)
         {
             return await _scheduleTaskRepository.DeleteAsync(id);
+        }
+        /// <summary>
+        /// 获取下拉列表
+        /// </summary>
+        /// <returns></returns>
+        public async Task<OperationResponse<IEnumerable<SelectListItem>>> GetLoadSelectListItemAsync()
+        {
+
+            var list= await _scheduleTaskRepository.NoTrackEntities.Select(x => new SelectListItem
+            {
+                Value = x.Id.ToString(),
+                Text=x.TaskName,
+                Selected=false,
+            }).ToListAsync();
+            return new OperationResponse<IEnumerable<SelectListItem>>(ResultMessage.DataSuccess, list, OperationEnumType.Success);
         }
     }
 }
