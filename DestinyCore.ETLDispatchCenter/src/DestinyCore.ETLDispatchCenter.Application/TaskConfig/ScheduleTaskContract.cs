@@ -78,12 +78,14 @@ namespace DestinyCore.ETLDispatchCenter.Application.TaskConfig
         public async Task<OperationResponse<IEnumerable<SelectListItem>>> GetLoadSelectListItemAsync()
         {
 
-            var list= await _scheduleTaskRepository.NoTrackEntities.Select(x => new SelectListItem
-            {
-                Value = x.Id.ToString(),
-                Text=x.TaskName,
-                Selected=false,
-            }).ToListAsync();
+            var list = await _scheduleTaskRepository.NoTrackEntities.Distinct()
+
+                .Select(x => new SelectListItem
+                {
+                    Value = x.Id.ToString(),
+                    Text = x.TaskName,
+                    Selected = false,
+                }).ToListAsync();
             return new OperationResponse<IEnumerable<SelectListItem>>(ResultMessage.DataSuccess, list, OperationEnumType.Success);
         }
     }

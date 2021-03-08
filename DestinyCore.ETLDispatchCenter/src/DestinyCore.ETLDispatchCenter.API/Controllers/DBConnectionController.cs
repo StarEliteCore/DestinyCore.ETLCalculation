@@ -34,7 +34,7 @@ namespace DestinyCore.ETLDispatchCenter.API.Controllers
         [HttpPost]
         [Description("添加数据连接")]
         [AuditLog]
-        public async Task<AjaxResult> CreateAsync(DBConnResourceInputDto input)
+        public async Task<AjaxResult> CreateAsync([FromBody] DBConnResourceInputDto input)
         {
             return (await _dBConnectionContract.CreateAsync(input)).ToAjaxResult();
         }
@@ -46,7 +46,7 @@ namespace DestinyCore.ETLDispatchCenter.API.Controllers
         [HttpPut]
         [Description("修改数据连接")]
         [AuditLog]
-        public async Task<AjaxResult> UpdateAsync(DBConnResourceInputDto input)
+        public async Task<AjaxResult> UpdateAsync([FromBody] DBConnResourceInputDto input)
         {
             return (await _dBConnectionContract.UpdateAsync(input)).ToAjaxResult();
         }
@@ -94,6 +94,6 @@ namespace DestinyCore.ETLDispatchCenter.API.Controllers
         {
             return (await _dBConnectionContract.GetLoadSelectListItemAsync()).ToAjaxResult();
         }
-        
+
     }
 }
