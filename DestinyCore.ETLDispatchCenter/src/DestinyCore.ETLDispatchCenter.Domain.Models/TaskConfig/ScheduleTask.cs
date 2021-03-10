@@ -6,24 +6,26 @@ namespace DestinyCore.ETLDispatchCenter.Domain.Models.TaskConfig
 {
     public class ScheduleTask : EntityBase<Guid>, IFullAuditedEntity<Guid>
     {
-        public ScheduleTask(string taskNumber, string taskName, TaskTypeEnum taskType, string taskConfig/*, Guid sourceConnectionId, Guid targetConnectionId, string sourceTable, string targetTable*/)
+        public ScheduleTask(string taskNumber, string taskName, TaskTypeEnum taskType, string taskConfig, string describe/*, Guid sourceConnectionId, Guid targetConnectionId, string sourceTable, string targetTable*/)
         {
             TaskNumber = taskNumber;
             TaskName = taskName;
             TaskType = taskType;
             TaskConfig = taskConfig;
+            Describe = describe;
             //SourceConnectionId = sourceConnectionId;
             //TargetConnectionId = targetConnectionId;
             //SourceTable = sourceTable;
             //TargetTable = targetTable;
         }
 
-        public void Change(string taskNumber, string taskName, TaskTypeEnum taskType, string taskConfig/*, Guid sourceConnectionId, Guid targetConnectionId, string sourceTable, string targetTable*/)
+        public void Change(string taskNumber, string taskName, TaskTypeEnum taskType, string taskConfig, string describe/*, Guid sourceConnectionId, Guid targetConnectionId, string sourceTable, string targetTable*/)
         {
             TaskNumber = taskNumber;
             TaskName = taskName;
             TaskType = taskType;
             TaskConfig = taskConfig;
+            Describe = describe;
             //SourceConnectionId = sourceConnectionId;
             //TargetConnectionId = targetConnectionId;
             //SourceTable = sourceTable;
@@ -50,6 +52,11 @@ namespace DestinyCore.ETLDispatchCenter.Domain.Models.TaskConfig
         /// </summary>
         [DisplayName("任务配置信息")]
         public string TaskConfig { get; private set; }
+        /// <summary>
+        /// 描述
+        /// </summary>
+        [DisplayName("描述")]
+        public string Describe { get; private set; }
         /// <summary>
         /// 源链接
         /// </summary>

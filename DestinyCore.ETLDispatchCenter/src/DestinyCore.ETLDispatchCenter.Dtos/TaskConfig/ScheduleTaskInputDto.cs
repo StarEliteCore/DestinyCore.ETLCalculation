@@ -31,6 +31,11 @@ namespace DestinyCore.ETLDispatchCenter.Dtos.TaskConfig
         [DisplayName("任务配置信息")]
         public string TaskConfig { get; set; }
         /// <summary>
+        /// 描述
+        /// </summary>
+        [DisplayName("描述")]
+        public string Describe { get; set; }
+        /// <summary>
         /// 源链接
         /// </summary>
         [DisplayName("源链接")]
