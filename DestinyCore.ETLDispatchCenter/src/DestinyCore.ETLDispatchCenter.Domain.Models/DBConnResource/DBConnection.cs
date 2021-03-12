@@ -1,6 +1,8 @@
 ﻿using DestinyCore.ETLDispatchCenter.Domain.Models.DBConn;
+using DestinyCore.ETLDispatchCenter.Shared;
 using DestinyCore.ETLDispatchCenter.Shared.Entity;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 
 namespace DestinyCore.ETLDispatchCenter.Domain.Models.DBConnResource
@@ -9,9 +11,9 @@ namespace DestinyCore.ETLDispatchCenter.Domain.Models.DBConnResource
     /// 数据库资源连接
     /// </summary>
     [DisplayName("数据库资源连接")]
-    public class DBConnection : EntityBase<Guid>, IFullAuditedEntity<Guid>
+    public class DBConnection : AggregateRootBase<Guid>, IFullAuditedEntity<Guid>
     {
-        public DBConnection(string connectionName, string memo, string host, int port, string userName, string passWord, DBTypeEnum dBType, int maxConnSize)
+        public DBConnection(string connectionName, string memo, string host, int port, string userName, string passWord, DBTypeEnum dBType, int maxConnSize, string dataBase)
         {
             ConnectionName = connectionName;
             Memo = memo;
@@ -21,6 +23,7 @@ namespace DestinyCore.ETLDispatchCenter.Domain.Models.DBConnResource
             PassWord = passWord;
             DBType = dBType;
             MaxConnSize = maxConnSize;
+            this.DataBase = dataBase;
         }
         #region Func
         /// <summary>
@@ -34,7 +37,7 @@ namespace DestinyCore.ETLDispatchCenter.Domain.Models.DBConnResource
         /// <param name="passWord"></param>
         /// <param name="dBType"></param>
         /// <param name="maxConnSize"></param>
-        public void Update(string connectionName, string memo, string host, int port, string userName, string passWord, DBTypeEnum dBType, int maxConnSize)
+        public void Update(string connectionName, string memo, string host, int port, string userName, string passWord, DBTypeEnum dBType, int maxConnSize, string dataBase)
         {
             ConnectionName = connectionName;
             Memo = memo;
@@ -44,6 +47,17 @@ namespace DestinyCore.ETLDispatchCenter.Domain.Models.DBConnResource
             PassWord = passWord;
             DBType = dBType;
             MaxConnSize = maxConnSize;
+            this.DataBase = dataBase;
+        }
+        /// <summary>
+        /// 导入元数据
+        /// </summary>
+        /// <param name="metaDatas"></param>
+        public void ImportMetaData(List<DBMetaData> metaDatas)
+        {
+            if (this.MetaDatas == null)
+                this.MetaDatas = new List<DBMetaData>();
+            MetaDatas.AddRange(metaDatas);
         }
         /// <summary>
         /// 删除
@@ -53,7 +67,10 @@ namespace DestinyCore.ETLDispatchCenter.Domain.Models.DBConnResource
             IsDeleted = true;
         }
         #endregion
-
+        /// <summary>
+        /// 元数据
+        /// </summary>
+        public List<DBMetaData> MetaDatas { get; private set; }
         /// <summary>
         /// 连接名称
         /// </summary>
@@ -95,6 +112,12 @@ namespace DestinyCore.ETLDispatchCenter.Domain.Models.DBConnResource
         [DisplayName("最大连接数")]
         public int MaxConnSize { get; private set; }
         /// <summary>
+        /// 数据库名称
+        /// </summary>
+        [DisplayName("数据库名称")]
+        public string DataBase { get; private set; }
+        #region 公共字段
+        /// <summary>
         /// 创建人Id
         /// </summary>
         [DisplayName("创建人Id")]
@@ -119,5 +142,6 @@ namespace DestinyCore.ETLDispatchCenter.Domain.Models.DBConnResource
         /// </summary>
         [DisplayName("是否删除")]
         public bool IsDeleted { get; set; }
+        #endregion
     }
 }

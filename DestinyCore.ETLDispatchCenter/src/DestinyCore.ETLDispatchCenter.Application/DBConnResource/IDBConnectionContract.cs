@@ -1,4 +1,5 @@
-﻿using DestinyCore.ETLDispatchCenter.Dtos.DBConnResourceDto;
+﻿using DestinyCore.ETLDispatchCenter.Dtos.DataDictionaryDto;
+using DestinyCore.ETLDispatchCenter.Dtos.DBConnResourceDto;
 using DestinyCore.ETLDispatchCenter.Shared;
 using DestinyCore.ETLDispatchCenter.Shared.Entity;
 using DestinyCore.ETLDispatchCenter.Shared.Extensions.ResultExtensions;
@@ -47,6 +48,17 @@ namespace DestinyCore.ETLDispatchCenter.Application.DBConnResource
         /// </summary>
         /// <returns></returns>
         Task<OperationResponse<IEnumerable<SelectListItem>>> GetLoadSelectListItemAsync();
-
+        /// <summary>
+        /// 导入元数据
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        Task<OperationResponse> ImportMetaDataAsync(MetaDataImportInputDto input);
+        /// <summary>
+        /// 获取元数据
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        Task<OperationResponse> GetLoadMetaDataAsync(Guid Id);
     }
 }

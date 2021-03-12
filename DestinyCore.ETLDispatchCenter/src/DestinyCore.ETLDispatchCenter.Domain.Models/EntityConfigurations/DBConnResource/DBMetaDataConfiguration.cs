@@ -6,12 +6,12 @@ using System;
 
 namespace DestinyCore.ETLDispatchCenter.Domain.Models.EntityConfigurations.DBConnResource
 {
-    public class DBConnectionConfiguration : AggregateRootMappingConfiguration<DBConnection, Guid>
+    public class DBMetaDataConfiguration : EntityMappingConfiguration<DBMetaData, Guid>
     {
-        public override void Map(EntityTypeBuilder<DBConnection> b)
+        public override void Map(EntityTypeBuilder<DBMetaData> b)
         {
             b.HasKey(o => o.Id);
-            b.ToTable("ETL_DBConnection").HasComment("数据库连接管理");
+            b.ToTable("ETL_DBMetaData").HasComment("元数据管理");
         }
     }
 }

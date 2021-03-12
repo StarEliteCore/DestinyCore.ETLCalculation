@@ -50,5 +50,10 @@ namespace DestinyCore.ETLDispatchCenter.Dtos.DBConnResourceDto
         /// </summary>
         [DisplayName("最大连接数")]
         public int MaxConnSize { get; set; }
+        /// <summary>
+        /// 数据库名称
+        /// </summary>
+        [DisplayName("数据库名称")]
+        public string DataBase { get; set; }
     }
 }

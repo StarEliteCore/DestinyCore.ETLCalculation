@@ -1,5 +1,6 @@
 ﻿using DestinyCore.ETLDispatchCenter.Application.DBConnResource;
 using DestinyCore.ETLDispatchCenter.AspNetCore.ApiBase;
+using DestinyCore.ETLDispatchCenter.Dtos.DataDictionaryDto;
 using DestinyCore.ETLDispatchCenter.Dtos.DBConnResourceDto;
 using DestinyCore.ETLDispatchCenter.Shared.AjaxResult;
 using DestinyCore.ETLDispatchCenter.Shared.Audit;
@@ -82,6 +83,7 @@ namespace DestinyCore.ETLDispatchCenter.API.Controllers
         [AuditLog]
         public async Task<AjaxResult> DeleteAsync(Guid? id)
         {
+            await _dBConnectionContract.GetLoadMetaDataAsync(id.Value);
             return (await _dBConnectionContract.DeleteAsync(id.Value)).ToAjaxResult();
         }
         /// <summary>
@@ -93,6 +95,29 @@ namespace DestinyCore.ETLDispatchCenter.API.Controllers
         public async Task<AjaxResult> GetLoadSelectListItemAsync()
         {
             return (await _dBConnectionContract.GetLoadSelectListItemAsync()).ToAjaxResult();
+        }
+
+        /// <summary>
+        /// 导入元数据
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [Description("导入元数据")]
+        public async Task<AjaxResult> ImportMetaDataAsync([FromBody] MetaDataImportInputDto input)
+        {
+            return (await _dBConnectionContract.ImportMetaDataAsync(input)).ToAjaxResult();
+        }
+        /// <summary>
+        /// 获取元数据
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Description("获取元数据")]
+        public async Task<AjaxResult> GetLoadMetaDataAsync(Guid Id)
+        {
+            return (await _dBConnectionContract.GetLoadMetaDataAsync(Id)).ToAjaxResult();
         }
 
     }

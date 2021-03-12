@@ -1,5 +1,5 @@
 ﻿using DestinyCore.ETLDispatchCenter.Domain.Models.DBConnResource;
-using DestinyCore.ETLDispatchCenter.Shared.Entity;
+using DestinyCore.ETLDispatchCenter.Shared;
 using DestinyCore.ETLDispatchCenter.Shared.OperationResult;
 using System;
 using System.Threading.Tasks;
@@ -8,9 +8,9 @@ namespace DestinyCore.ETLDispatchCenter.Domain.Services.DBConnResourceDomainServ
 {
     public class DBConnectionDomainService : IDBConnectionDomainService
     {
-        private readonly IEFCoreRepository<DBConnection, Guid> _dbconnectionRepository = null;
+        private readonly IAggregateRootRepository<DBConnection, Guid> _dbconnectionRepository = null;
 
-        public DBConnectionDomainService(IEFCoreRepository<DBConnection, Guid> dbconnectionRepository)
+        public DBConnectionDomainService(IAggregateRootRepository<DBConnection, Guid> dbconnectionRepository)
         {
             _dbconnectionRepository = dbconnectionRepository;
         }

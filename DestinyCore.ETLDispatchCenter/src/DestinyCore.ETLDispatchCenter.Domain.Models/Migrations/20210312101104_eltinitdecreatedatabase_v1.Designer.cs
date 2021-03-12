@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DestinyCore.ETLDispatchCenter.Domain.Models.Migrations
 {
     [DbContext(typeof(DefaultDbContext))]
-    [Migration("20210225091958_eltinitdecreatedatabase_v1")]
+    [Migration("20210312101104_eltinitdecreatedatabase_v1")]
     partial class eltinitdecreatedatabase_v1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -36,6 +36,9 @@ namespace DestinyCore.ETLDispatchCenter.Domain.Models.Migrations
 
                     b.Property<int>("DBType")
                         .HasColumnType("int");
+
+                    b.Property<string>("DataBase")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("Host")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
@@ -69,6 +72,51 @@ namespace DestinyCore.ETLDispatchCenter.Domain.Models.Migrations
                     b.ToTable("ETL_DBConnection");
 
                     b.HasComment("数据库连接管理");
+                });
+
+            modelBuilder.Entity("DestinyCore.ETLDispatchCenter.Domain.Models.DBConnResource.DBMetaData", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<Guid?>("ConnectionId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<Guid?>("CreatedId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("Describe")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<DateTime>("LastModifedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<Guid?>("LastModifyId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<int>("MetaDataType")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<Guid>("ParentId")
+                        .HasColumnType("char(36)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ConnectionId");
+
+                    b.ToTable("ETL_DBMetaData");
+
+                    b.HasComment("元数据管理");
                 });
 
             modelBuilder.Entity("DestinyCore.ETLDispatchCenter.Domain.Models.SystemFoundation.DataDictionary.DataDictionaryEntity", b =>
@@ -134,6 +182,9 @@ namespace DestinyCore.ETLDispatchCenter.Domain.Models.Migrations
                     b.Property<Guid?>("CreatedId")
                         .HasColumnType("char(36)");
 
+                    b.Property<string>("Describe")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("tinyint(1)");
 
@@ -143,10 +194,25 @@ namespace DestinyCore.ETLDispatchCenter.Domain.Models.Migrations
                     b.Property<Guid?>("LastModifyId")
                         .HasColumnType("char(36)");
 
+                    b.Property<Guid>("SourceConnectionId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("SourceTable")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<Guid>("TargetConnectionId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("TargetTable")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
                     b.Property<string>("TaskConfig")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("TaskName")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("TaskNumber")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<int>("TaskType")
@@ -157,6 +223,13 @@ namespace DestinyCore.ETLDispatchCenter.Domain.Models.Migrations
                     b.ToTable("ETL_ScheduleTask");
 
                     b.HasComment("任务管理");
+                });
+
+            modelBuilder.Entity("DestinyCore.ETLDispatchCenter.Domain.Models.DBConnResource.DBMetaData", b =>
+                {
+                    b.HasOne("DestinyCore.ETLDispatchCenter.Domain.Models.DBConnResource.DBConnection", "Connection")
+                        .WithMany("MetaDatas")
+                        .HasForeignKey("ConnectionId");
                 });
 #pragma warning restore 612, 618
         }

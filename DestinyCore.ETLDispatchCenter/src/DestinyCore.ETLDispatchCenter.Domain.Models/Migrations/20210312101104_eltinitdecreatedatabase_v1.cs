@@ -42,6 +42,7 @@ namespace DestinyCore.ETLDispatchCenter.Domain.Models.Migrations
                     PassWord = table.Column<string>(nullable: true),
                     DBType = table.Column<int>(nullable: false),
                     MaxConnSize = table.Column<int>(nullable: false),
+                    DataBase = table.Column<string>(nullable: true),
                     CreatedId = table.Column<Guid>(nullable: true),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     LastModifyId = table.Column<Guid>(nullable: true),
@@ -59,9 +60,15 @@ namespace DestinyCore.ETLDispatchCenter.Domain.Models.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
+                    TaskNumber = table.Column<string>(nullable: true),
                     TaskName = table.Column<string>(nullable: true),
                     TaskType = table.Column<int>(nullable: false),
                     TaskConfig = table.Column<string>(nullable: true),
+                    Describe = table.Column<string>(nullable: true),
+                    SourceConnectionId = table.Column<Guid>(nullable: false),
+                    TargetConnectionId = table.Column<Guid>(nullable: false),
+                    SourceTable = table.Column<string>(nullable: true),
+                    TargetTable = table.Column<string>(nullable: true),
                     CreatedId = table.Column<Guid>(nullable: true),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     LastModifyId = table.Column<Guid>(nullable: true),
@@ -73,6 +80,39 @@ namespace DestinyCore.ETLDispatchCenter.Domain.Models.Migrations
                     table.PrimaryKey("PK_ETL_ScheduleTask", x => x.Id);
                 },
                 comment: "任务管理");
+
+            migrationBuilder.CreateTable(
+                name: "ETL_DBMetaData",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(nullable: false),
+                    MetaDataType = table.Column<int>(nullable: false),
+                    Name = table.Column<string>(nullable: true),
+                    ConnectionId = table.Column<Guid>(nullable: true),
+                    Describe = table.Column<string>(nullable: true),
+                    ParentId = table.Column<Guid>(nullable: false),
+                    CreatedId = table.Column<Guid>(nullable: true),
+                    CreatedAt = table.Column<DateTime>(nullable: false),
+                    LastModifyId = table.Column<Guid>(nullable: true),
+                    LastModifedAt = table.Column<DateTime>(nullable: false),
+                    IsDeleted = table.Column<bool>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ETL_DBMetaData", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ETL_DBMetaData_ETL_DBConnection_ConnectionId",
+                        column: x => x.ConnectionId,
+                        principalTable: "ETL_DBConnection",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                },
+                comment: "元数据管理");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ETL_DBMetaData_ConnectionId",
+                table: "ETL_DBMetaData",
+                column: "ConnectionId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -81,10 +121,13 @@ namespace DestinyCore.ETLDispatchCenter.Domain.Models.Migrations
                 name: "DataDictionary");
 
             migrationBuilder.DropTable(
-                name: "ETL_DBConnection");
+                name: "ETL_DBMetaData");
 
             migrationBuilder.DropTable(
                 name: "ETL_ScheduleTask");
+
+            migrationBuilder.DropTable(
+                name: "ETL_DBConnection");
         }
     }
 }

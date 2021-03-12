@@ -78,6 +78,20 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:DestinyCore.ETLDispatchCenter.API.Controllers.DBConnectionController.ImportMetaDataAsync(DestinyCore.ETLDispatchCenter.Dtos.DataDictionaryDto.MetaDataImportInputDto)">
+            <summary>
+            导入元数据
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DestinyCore.ETLDispatchCenter.API.Controllers.DBConnectionController.GetLoadMetaDataAsync(System.Guid)">
+            <summary>
+            获取元数据
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
         <member name="M:DestinyCore.ETLDispatchCenter.API.Controllers.HealthController.Get">
             <summary>
             健康监测
