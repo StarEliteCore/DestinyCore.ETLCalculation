@@ -112,8 +112,8 @@ namespace DestinyCore.ETLDispatchCenter.Application.DBConnResource
             var model = await _dbconnectionRepository.GetByIdAsync(Id);
             var connectionString = "";
             var basePath = Microsoft.DotNet.PlatformAbstractions.ApplicationEnvironment.ApplicationBasePath; //获取项目路径
-            string file = Directory.GetFiles(@$"{basePath}\SuktCoreDB.txt").First();
-            using StreamReader r = new StreamReader(file);
+            //string file = Directory.GetFiles(@$"{basePath}\SuktCoreDB.txt").First();
+            using StreamReader r = new StreamReader(@$"{basePath}\SuktCoreDB.txt");
             connectionString = r.ReadToEnd();
             var dbcontion = _sqlSugarDbContext.GetSqlSugarClient(new SqlSugar.ConnectionConfig()
             {
@@ -122,13 +122,13 @@ namespace DestinyCore.ETLDispatchCenter.Application.DBConnResource
                 IsAutoCloseConnection = false
             });
             var columns = await dbcontion.Ado.SqlQueryAsync<TreeOutPutDto>(@"
-                SELECT COL.COLUMN_NAME as Title,COL.COLUMN_NAME as Key,COL.TABLE_NAME as Parent,10 as MetaDataType FROM INFORMATION_SCHEMA.COLUMNS COL Where COL.TABLE_SCHEMA=@TABLE_SCHEMA", new { TABLE_SCHEMA = model.DataBase });
+                SELECT COL.COLUMN_NAME as Title,COL.COLUMN_NAME as `Key`,COL.TABLE_NAME as Parent,10 as MetaDataType FROM INFORMATION_SCHEMA.COLUMNS COL Where COL.TABLE_SCHEMA=@TABLE_SCHEMA", new { TABLE_SCHEMA = "ETL.DispatchCenter" });
             var tables = await dbcontion.Ado.SqlQueryAsync<TreeOutPutDto>(@"
-                SELECT TB.TABLE_SCHEMA,TB.TABLE_NAME,TB.TABLE_COMMENT,TB.TABLE_TYPE ,CASE TB.TABLE_TYPE
-                WHEN 'BASE TABLE' THEN 0 WHEN 'VIEW' THEN 5 ELSE 0 END FROM INFORMATION_SCHEMA.TABLES TB Where TB.TABLE_SCHEMA=@TABLE_SCHEMA", new { TABLE_SCHEMA = model.DataBase });
+                SELECT TB.TABLE_NAME as `Title`,TB.TABLE_NAME as `Key`,TB.TABLE_SCHEMA as Parent,CASE TB.TABLE_TYPE
+                WHEN 'BASE TABLE' THEN 0 WHEN 'VIEW' THEN 5 ELSE 0 END FROM INFORMATION_SCHEMA.TABLES TB Where TB.TABLE_SCHEMA=@TABLE_SCHEMA", new { TABLE_SCHEMA = "ETL.DispatchCenter" } /*new { TABLE_SCHEMA = model.DataBase }*/);
             tables.ForEach(x =>
             {
-                var childrens = columns.Where(s => s.Parent == x.Parent).ToList();
+                var childrens = columns.Where(s => s.Parent == x.Key).ToList();
                 x.Children.AddRange(childrens);
             });
             return new OperationResponse(ResultMessage.DataSuccess, tables, OperationEnumType.Success);
