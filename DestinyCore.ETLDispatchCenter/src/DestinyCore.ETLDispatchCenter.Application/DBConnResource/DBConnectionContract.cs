@@ -121,8 +121,7 @@ namespace DestinyCore.ETLDispatchCenter.Application.DBConnResource
                 DbType = SqlSugar.DbType.MySql,
                 IsAutoCloseConnection = false
             });
-            var columns = await dbcontion.Ado.SqlQueryAsync<TreeOutPutDto>(@"
-                SELECT COL.COLUMN_NAME as Title,COL.COLUMN_NAME as `Key`,COL.TABLE_NAME as Parent,10 as MetaDataType FROM INFORMATION_SCHEMA.COLUMNS COL Where COL.TABLE_SCHEMA=@TABLE_SCHEMA", new { TABLE_SCHEMA = "ETL.DispatchCenter" });
+            var columns = await dbcontion.Ado.SqlQueryAsync<TreeOutPutDto>(@"SELECT COL.COLUMN_NAME as Title,concat( COL.TABLE_NAME,'-',COL.COLUMN_NAME)  as `Key`,COL.TABLE_NAME as Parent,10 as MetaDataType FROM INFORMATION_SCHEMA.COLUMNS COL Where COL.TABLE_SCHEMA=@TABLE_SCHEMA", new { TABLE_SCHEMA = "ETL.DispatchCenter" });
             var tables = await dbcontion.Ado.SqlQueryAsync<TreeOutPutDto>(@"
                 SELECT TB.TABLE_NAME as `Title`,TB.TABLE_NAME as `Key`,TB.TABLE_SCHEMA as Parent,CASE TB.TABLE_TYPE
                 WHEN 'BASE TABLE' THEN 0 WHEN 'VIEW' THEN 5 ELSE 0 END FROM INFORMATION_SCHEMA.TABLES TB Where TB.TABLE_SCHEMA=@TABLE_SCHEMA", new { TABLE_SCHEMA = "ETL.DispatchCenter" } /*new { TABLE_SCHEMA = model.DataBase }*/);
