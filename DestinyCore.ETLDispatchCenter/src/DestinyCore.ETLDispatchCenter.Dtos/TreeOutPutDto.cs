@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using DestinyCore.ETLDispatchCenter.Domain.Models.DBConnResource;
+using System.Collections.Generic;
 
 namespace DestinyCore.ETLDispatchCenter.Dtos
 {
@@ -23,6 +24,10 @@ namespace DestinyCore.ETLDispatchCenter.Dtos
         /// 是否可选
         /// </summary>
         public bool Disabled { get; set; }
+        /// <summary>
+        /// 类型
+        /// </summary>
+        public MetaDataTypeEnum MetaDataType { get; set; }
         /// <summary>
         /// 子级
         /// </summary>

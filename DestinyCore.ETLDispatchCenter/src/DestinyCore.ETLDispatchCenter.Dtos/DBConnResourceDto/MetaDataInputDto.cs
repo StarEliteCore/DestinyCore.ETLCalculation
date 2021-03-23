@@ -9,7 +9,7 @@ namespace DestinyCore.ETLDispatchCenter.Dtos.DataDictionaryDto
     /// <summary>
     /// 元数据输入Dto
     /// </summary>
-    public class MetaDataInputDto : InputDto<Guid>
+    public class MetaDataInputDto
     {
         [DisplayName("元数据类型")]
         public MetaDataTypeEnum MetaDataType { get; set; }
