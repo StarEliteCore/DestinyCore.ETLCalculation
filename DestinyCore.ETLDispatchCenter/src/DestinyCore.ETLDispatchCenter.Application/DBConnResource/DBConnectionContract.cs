@@ -100,7 +100,7 @@ namespace DestinyCore.ETLDispatchCenter.Application.DBConnResource
         {
             input.NotNull(nameof(input));
             var model = await _dbconnectionRepository.GetByIdAsync(input.Id);
-            model.MetaDatas.ForEach(x =>
+            model.MetaDatas?.ForEach(x =>
             {
                 x.Delete();
             });

@@ -63,6 +63,7 @@ namespace DestinyCore.ETLDispatchCenter.Shared
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
             var result = OnBeforeSaveChanges();
+            ApplyConcepts();
             var count = await base.SaveChangesAsync(cancellationToken);
             OnCompleted(count, result);
             return count;
@@ -75,6 +76,7 @@ namespace DestinyCore.ETLDispatchCenter.Shared
         public override int SaveChanges()
         {
             var result = OnBeforeSaveChanges();
+            ApplyConcepts();
             var count = base.SaveChanges();
             OnCompleted(count, result);
             return count;
