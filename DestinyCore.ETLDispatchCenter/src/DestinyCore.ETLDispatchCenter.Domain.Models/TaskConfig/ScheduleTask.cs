@@ -6,30 +6,22 @@ namespace DestinyCore.ETLDispatchCenter.Domain.Models.TaskConfig
 {
     public class ScheduleTask : EntityBase<Guid>, IFullAuditedEntity<Guid>
     {
-        public ScheduleTask(string taskNumber, string taskName, TaskTypeEnum taskType, string taskConfig, string describe/*, Guid sourceConnectionId, Guid targetConnectionId, string sourceTable, string targetTable*/)
+        public ScheduleTask(string taskNumber, string taskName, TaskTypeEnum taskType, string taskConfig, string describe)
         {
             TaskNumber = taskNumber;
             TaskName = taskName;
             TaskType = taskType;
             TaskConfig = taskConfig;
             Describe = describe;
-            //SourceConnectionId = sourceConnectionId;
-            //TargetConnectionId = targetConnectionId;
-            //SourceTable = sourceTable;
-            //TargetTable = targetTable;
         }
 
-        public void Change(string taskNumber, string taskName, TaskTypeEnum taskType, string taskConfig, string describe/*, Guid sourceConnectionId, Guid targetConnectionId, string sourceTable, string targetTable*/)
+        public void Change(string taskNumber, string taskName, TaskTypeEnum taskType, string taskConfig, string describe)
         {
             TaskNumber = taskNumber;
             TaskName = taskName;
             TaskType = taskType;
             TaskConfig = taskConfig;
             Describe = describe;
-            //SourceConnectionId = sourceConnectionId;
-            //TargetConnectionId = targetConnectionId;
-            //SourceTable = sourceTable;
-            //TargetTable = targetTable;
         }
         /// <summary>
         /// 任务编号
@@ -57,26 +49,6 @@ namespace DestinyCore.ETLDispatchCenter.Domain.Models.TaskConfig
         /// </summary>
         [DisplayName("描述")]
         public string Describe { get; private set; }
-        /// <summary>
-        /// 源链接
-        /// </summary>
-        [DisplayName("源链接")]
-        public Guid SourceConnectionId { get; private set; }
-        /// <summary>
-        /// 目标链接
-        /// </summary>
-        [DisplayName("目标链接")]
-        public Guid TargetConnectionId { get; private set; }
-        /// <summary>
-        /// 源表
-        /// </summary>
-        [DisplayName("源表")]
-        public string SourceTable { get; private set; }
-        /// <summary>
-        /// 目标表
-        /// </summary>
-        [DisplayName("目标表")]
-        public string TargetTable { get; private set; }
         /// <summary>
         /// 创建人Id
         /// </summary>

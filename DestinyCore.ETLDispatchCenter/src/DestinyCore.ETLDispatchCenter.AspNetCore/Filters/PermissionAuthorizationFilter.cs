@@ -29,28 +29,28 @@ namespace DestinyCore.ETLDispatchCenter.AspNetCore.Filters
         {
             await Task.CompletedTask;
 
-            var action = context.ActionDescriptor as ControllerActionDescriptor;
-            var isAllowAnonymous = action.ControllerTypeInfo.GetCustomAttribute<AllowAnonymousAttribute>();//获取Action中的特性
-            var linkurl = context.HttpContext.Request.Path.Value.Replace("/api/", "");
-            var result = new AjaxResult(ResultMessage.Unauthorized, Shared.Enums.AjaxResultType.Unauthorized);
-            if (!action.EndpointMetadata.Any(x => x is AllowAnonymousAttribute))
-            {
-                //if (!(bool)_httpContextAccessor.HttpContext?.User.Identity.IsAuthenticated)
-                //{
-                //    context.HttpContext.Response.StatusCode = StatusCodes.Status401Unauthorized;
-                //    context.Result = new JsonResult(result);
-                //    return;
-                //}
-                //if (!await _authority.IsPermission(linkurl.ToLower()))
-                //{
-                //    ////????不包含的时候怎么返回出去？这个请求终止掉
-                //    ///
-                //    result.Message = ResultMessage.Uncertified;
-                //    context.HttpContext.Response.StatusCode = StatusCodes.Status403Forbidden;
-                //    context.Result = new JsonResult(result);
-                //    return;
-                //}
-            }
+            //var action = context.ActionDescriptor as ControllerActionDescriptor;
+            //var isAllowAnonymous = action.ControllerTypeInfo.GetCustomAttribute<AllowAnonymousAttribute>();//获取Action中的特性
+            //var linkurl = context.HttpContext.Request.Path.Value.Replace("/api/", "");
+            //var result = new AjaxResult(ResultMessage.Unauthorized, Shared.Enums.AjaxResultType.Unauthorized);
+            //if (!action.EndpointMetadata.Any(x => x is AllowAnonymousAttribute))
+            //{
+            //    //if (!(bool)_httpContextAccessor.HttpContext?.User.Identity.IsAuthenticated)
+            //    //{
+            //    //    context.HttpContext.Response.StatusCode = StatusCodes.Status401Unauthorized;
+            //    //    context.Result = new JsonResult(result);
+            //    //    return;
+            //    //}
+            //    //if (!await _authority.IsPermission(linkurl.ToLower()))
+            //    //{
+            //    //    ////????不包含的时候怎么返回出去？这个请求终止掉
+            //    //    ///
+            //    //    result.Message = ResultMessage.Uncertified;
+            //    //    context.HttpContext.Response.StatusCode = StatusCodes.Status403Forbidden;
+            //    //    context.Result = new JsonResult(result);
+            //    //    return;
+            //    //}
+            //}
         }
     }
 }

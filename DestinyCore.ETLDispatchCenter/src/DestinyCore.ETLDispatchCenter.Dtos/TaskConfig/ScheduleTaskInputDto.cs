@@ -35,25 +35,5 @@ namespace DestinyCore.ETLDispatchCenter.Dtos.TaskConfig
         /// </summary>
         [DisplayName("描述")]
         public string Describe { get; set; }
-        /// <summary>
-        /// 源链接
-        /// </summary>
-        [DisplayName("源链接")]
-        public Guid SourceConnectionId { get; set; }
-        /// <summary>
-        /// 目标链接
-        /// </summary>
-        [DisplayName("目标链接")]
-        public Guid TargetConnectionId { get; set; }
-        /// <summary>
-        /// 源表
-        /// </summary>
-        [DisplayName("源表")]
-        public string SourceTable { get; set; }
-        /// <summary>
-        /// 目标表
-        /// </summary>
-        [DisplayName("目标表")]
-        public string TargetTable { get; set; }
     }
 }
