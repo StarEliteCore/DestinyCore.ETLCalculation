@@ -1,0 +1,73 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>cceb6c5c-9aca-466d-9fe6-a019e910f92b</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..</DockerfileContext>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>.\DestinyCore.WorkNode.API.xml</DocumentationFile>
+    <NoWarn>1701;1702;1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Startups\AopModule.cs" />
+    <Compile Remove="Startups\AspNetCoreAOPModule.cs" />
+    <Compile Remove="Startups\ConsulModule.cs" />
+    <Compile Remove="Startups\CSRedisModule.cs" />
+    <Compile Remove="Startups\EventBusAppModule.cs" />
+    <Compile Remove="Startups\SuktAspNetCoreMvcModule.cs" />
+    <Compile Remove="Startups\SuktAutoMapperModule.cs" />
+    <Compile Remove="Startups\SwaggerModule.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AspectCore.Extensions.Hosting" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="5.0.4" />
+    <PackageReference Include="Microsoft.DotNet.PlatformAbstractions" Version="3.1.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.8" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+    <PackageReference Include="Serilog" Version="2.10.0" />
+    <PackageReference Include="Serilog.AspNetCore" Version="4.1.0" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
+    <PackageReference Include="Serilog.Sinks.File" Version="4.1.0" />
+    <PackageReference Include="SkyAPM.Agent.AspNetCore" Version="1.2.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DestinyCore.WorkNode.Aop\DestinyCore.WorkNode.Aop.csproj" />
+    <ProjectReference Include="..\DestinyCore.WorkNode.Application\DestinyCore.WorkNode.Application.csproj" />
+    <ProjectReference Include="..\DestinyCore.WorkNode.AspNetCore\DestinyCore.WorkNode.AspNetCore.csproj" />
+    <ProjectReference Include="..\DestinyCore.WorkNode.AutoMapper\DestinyCore.WorkNode.AutoMapper.csproj" />
+    <ProjectReference Include="..\DestinyCore.WorkNode.Consul\DestinyCore.WorkNode.Consul.csproj" />
+    <ProjectReference Include="..\DestinyCore.WorkNode.Dtos\DestinyCore.WorkNode.Dtos.csproj" />
+    <ProjectReference Include="..\DestinyCore.WorkNode.MultiTenancy\DestinyCore.WorkNode.MultiTenancy.csproj" />
+    <ProjectReference Include="..\DestinyCore.WorkNode.Redis\DestinyCore.WorkNode.Redis.csproj" />
+    <ProjectReference Include="..\DestinyCore.WorkNode.SeriLog\DestinyCore.WorkNode.SeriLog.csproj" />
+    <ProjectReference Include="..\DestinyCore.WorkNode.Swagger\DestinyCore.WorkNode.Swagger.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Dockerfile">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SuktCoreMongoDb.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ProjectExtensions>
+    <VisualStudio><UserProperties appsettings_1development_1json__JsonSchema="https://json.schemastore.org/appsettings" appsettings_1json__JsonSchema="" /></VisualStudio>
+  </ProjectExtensions>
+
+
+</Project>

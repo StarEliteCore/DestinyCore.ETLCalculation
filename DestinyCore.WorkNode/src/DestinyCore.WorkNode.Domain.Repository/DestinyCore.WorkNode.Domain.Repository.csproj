@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DestinyCore.WorkNode.Domain.Models\DestinyCore.WorkNode.Domain.Models.csproj" />
+    <ProjectReference Include="..\DestinyCore.WorkNode.EntityFrameworkCore\DestinyCore.WorkNode.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\DestinyCore.WorkNode.Shared\DestinyCore.WorkNode.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
