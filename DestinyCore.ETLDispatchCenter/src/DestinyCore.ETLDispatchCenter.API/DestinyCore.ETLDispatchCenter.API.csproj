@@ -60,7 +60,7 @@
     <None Update="Dockerfile">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="SuktCoreDB.txt">
+    <None Update="ETLDispatchCenterDB.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="SuktCoreMongoDb.txt">
