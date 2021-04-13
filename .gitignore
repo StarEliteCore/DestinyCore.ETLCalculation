@@ -389,3 +389,4 @@ src/Destiny.Core.Flow.API/DestinyCoreMongoDb.txt
 /DestinyCore.ETLDispatchCenter/src/DestinyCore.ETLDispatchCenter.API/SuktCoreMongoDb.txt
 /DestinyCore.ETLDispatchCenter/src/DestinyCore.ETLDispatchCenter.API/SuktCoreDB.txt
 /DestinyCore.ETLDispatchCenter/src/DestinyCore.ETLDispatchCenter.API/Logs
+/DestinyCore.ETLDispatchCenter/src/DestinyCore.ETLDispatchCenter.API/ETLDispatchCenterDB.txt
