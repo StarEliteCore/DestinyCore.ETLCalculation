@@ -67,6 +67,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DestinyCore.WorkNode.MultiT
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DestinyCore.WorkNode.CodeGenerator", "src\DestinyCore.WorkNode.CodeGenerator\DestinyCore.WorkNode.CodeGenerator.csproj", "{C819428F-7B36-463D-BCA1-367062593EC5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DestinyCore.WorkNode.Block", "src\DestinyCore.WorkNode.Block\DestinyCore.WorkNode.Block.csproj", "{4D549CAA-7A0C-4EF1-9350-B29FB006C724}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -157,6 +159,10 @@ Global
 		{C819428F-7B36-463D-BCA1-367062593EC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C819428F-7B36-463D-BCA1-367062593EC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C819428F-7B36-463D-BCA1-367062593EC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D549CAA-7A0C-4EF1-9350-B29FB006C724}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D549CAA-7A0C-4EF1-9350-B29FB006C724}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D549CAA-7A0C-4EF1-9350-B29FB006C724}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D549CAA-7A0C-4EF1-9350-B29FB006C724}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -186,6 +192,7 @@ Global
 		{23DCF52F-C79A-46F1-B96C-AEC4B8E23A8D} = {B061BE61-AEF2-4F5E-B900-280FBB10BFC3}
 		{B68AE830-ACD5-4335-A507-4923F0847294} = {B061BE61-AEF2-4F5E-B900-280FBB10BFC3}
 		{C819428F-7B36-463D-BCA1-367062593EC5} = {4A750E7C-B356-4C74-9BFC-F29D0D475E19}
+		{4D549CAA-7A0C-4EF1-9350-B29FB006C724} = {4A750E7C-B356-4C74-9BFC-F29D0D475E19}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {05B139D9-1492-4454-AF04-522949DE00D3}
