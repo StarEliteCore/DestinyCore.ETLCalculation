@@ -32,9 +32,11 @@
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.10.0" />
     <PackageReference Include="System.Linq.Dynamic.Core" Version="1.2.9" />
     <PackageReference Include="System.Runtime.Loader" Version="4.3.0" />
+    <PackageReference Include="System.Threading.Tasks.Dataflow" Version="5.0.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="DataFlowBlock\Extensions\" />
     <Folder Include="SuktAppModules\" />
   </ItemGroup>
 
