@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DestinyCore.WorkNode.Block.Option.Enum
+namespace DestinyCore.WorkNode.BlockOption.Enum
 {
     /// <summary>
     /// 字段类型

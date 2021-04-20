@@ -1,9 +1,9 @@
-﻿using DestinyCore.WorkNode.Block.Option.Enum;
+﻿using DestinyCore.WorkNode.BlockOption.Enum;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DestinyCore.WorkNode.Block.Option.Input
+namespace DestinyCore.WorkNode.BlockOption.Input
 {
     /// <summary>
     /// 下载Json文件，并读取到数据流中配置
