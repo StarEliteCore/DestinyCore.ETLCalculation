@@ -38,7 +38,9 @@ namespace DestinyCore.ETLDispatchCenter.Application.DBConnResource
         public async Task<OperationResponse> CreateAsync(DBConnResourceInputDto input)
         {
             input.NotNull(nameof(input));
-            return await _dbconnectionRepository.InsertAsync(new DBConnection(input.ConnectionName, input.Memo, input.Host, input.Port, input.UserName, input.PassWord, input.DBType, input.MaxConnSize, input.DataBase));
+            var entity = input.MapTo<DBConnection>();
+            return await _dbconnectionRepository.InsertAsync(entity);
+            //return await _dbconnectionRepository.InsertAsync(new DBConnection(input.ConnectionName, input.Memo, input.Host, input.Port, input.UserName, input.PassWord, input.DBType, input.MaxConnSize, input.DataBase));
         }
         /// <summary>
         /// 添加数据连接
