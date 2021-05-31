@@ -6,6 +6,21 @@ using System.Text;
 namespace DestinyCore.WorkNode.BlockOption.Input
 {
     /// <summary>
+    /// json读取内容
+    /// </summary>
+    public class JsonReadContent
+    {
+        /// <summary>
+        /// json字符串
+        /// </summary>
+        public string JsonString { get; set; }
+        /// <summary>
+        /// Json读取配置
+        /// </summary>
+        public List<JsonReadConfigInput> JsonReadConfig { get; set; }
+    }
+    
+    /// <summary>
     /// 下载Json文件，并读取到数据流中配置
     /// </summary>
     public class ReadJsonConfig
@@ -14,10 +29,7 @@ namespace DestinyCore.WorkNode.BlockOption.Input
         /// FTP配置项
         /// </summary>
         public FtpConfigInput FtpConfig { get; set; }
-        /// <summary>
-        /// Json读取配置
-        /// </summary>
-        public List<JsonReadConfigInput> JsonReadConfig { get; set; }
+        
     }
     /// <summary>
     /// FTP配置项

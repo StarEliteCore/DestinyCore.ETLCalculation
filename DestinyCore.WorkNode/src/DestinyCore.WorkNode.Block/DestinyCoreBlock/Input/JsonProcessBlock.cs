@@ -2,14 +2,17 @@
 using DestinyCore.WorkNode.BlockOption.Input;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Threading.Tasks.Dataflow;
+using Json.Path;
 
 namespace DestinyCore.WorkNode.Block.DestinyCoreBlock.Input
 {
-    public class JsonInputBlock<IDataTransMission> : IPropagatorBlock<IDataTransMission, IDataTransMission>, IReceivableSourceBlock<IDataTransMission>
+    public class JsonProcessBlock<IDataTransMission> : IPropagatorBlock<IDataTransMission, IDataTransMission>, IReceivableSourceBlock<IDataTransMission>
     {
         public readonly DataTransMission _datatransmission;
         /// <summary>
@@ -20,10 +23,43 @@ namespace DestinyCore.WorkNode.Block.DestinyCoreBlock.Input
         /// 目标连接块
         /// </summary>
         private readonly ITargetBlock<IDataTransMission> m_target;
-        public JsonInputBlock(ReadJsonConfig readJsonConfig)
+        public JsonProcessBlock(JsonReadContent content)
         {
-            // 创建一个队列来保存消息。
-            var queue = new Queue<IDataTransMission>();
+            var reader = new Utf8JsonReader(Encoding.UTF8.GetBytes(content.JsonString));
+            if (!JsonDocument.TryParseValue(ref reader, out var rootElement))
+            {
+                //非法json字符串
+                return;
+            }
+            
+            _datatransmission = new DataTransMission();
+            
+            foreach (var p in content.JsonReadConfig)
+            {
+                if (!JsonPath.TryParse(p.PathField, out var path))
+                {
+                    //json path不符合规范
+                    continue;
+                }
+
+                Debug.Assert(path != null, nameof(path) + " != null");
+                var field = path.Evaluate(rootElement.RootElement);
+                if (!field.Matches.Any())
+                {
+                    //找不到匹配的字段
+                    continue;
+                }
+
+                var fieldMatch = field.Matches.Single();
+                var name = fieldMatch.Location.Segments.Single().Source;
+                if (_datatransmission.Table.Columns.Contains(name))
+                {
+                    // _datatransmission.Table.Rows
+                }
+
+
+
+            }
             //传播器的源部分包含大小为readJsonConfig的对象并将数据传播到任何连接的目标。
             var source = new BufferBlock<IDataTransMission>();
             // 目标部件接收数据并将其添加到队列中。
@@ -37,7 +73,7 @@ namespace DestinyCore.WorkNode.Block.DestinyCoreBlock.Input
             {
                 source.Complete();
             });
-            _datatransmission = new DataTransMission();
+            
             m_target = target;
             m_source = source;
         }
